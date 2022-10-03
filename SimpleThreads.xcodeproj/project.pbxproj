@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0FF52328E8F2E30004F607 /* cartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0FF52228E8F2E30004F607 /* cartViewController.swift */; };
 		4C9C4F9D28E4E78900649009 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C4F9C28E4E78900649009 /* AppDelegate.swift */; };
 		4C9C4F9F28E4E78900649009 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C4F9E28E4E78900649009 /* SceneDelegate.swift */; };
 		4C9C4FA128E4E78900649009 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C4FA028E4E78900649009 /* HomeViewController.swift */; };
@@ -14,10 +15,11 @@
 		4C9C4FA628E4E78C00649009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C9C4FA528E4E78C00649009 /* Assets.xcassets */; };
 		4C9C4FA928E4E78C00649009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9C4FA728E4E78C00649009 /* LaunchScreen.storyboard */; };
 		4C9C4FB228E4E9AC00649009 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C4FB128E4E9AC00649009 /* ShopViewController.swift */; };
-		4C9C4FB428E4E9D000649009 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C4FB328E4E9D000649009 /* UserViewController.swift */; };
+		4C9C4FB428E4E9D000649009 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C4FB328E4E9D000649009 /* AccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C0FF52228E8F2E30004F607 /* cartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cartViewController.swift; sourceTree = "<group>"; };
 		4C9C4F9928E4E78900649009 /* SimpleThreads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleThreads.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9C4F9C28E4E78900649009 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C9C4F9E28E4E78900649009 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,7 +29,7 @@
 		4C9C4FA828E4E78C00649009 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C9C4FAA28E4E78C00649009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C9C4FB128E4E9AC00649009 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
-		4C9C4FB328E4E9D000649009 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		4C9C4FB328E4E9D000649009 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +78,8 @@
 			children = (
 				4C9C4FB128E4E9AC00649009 /* ShopViewController.swift */,
 				4C9C4FA028E4E78900649009 /* HomeViewController.swift */,
-				4C9C4FB328E4E9D000649009 /* UserViewController.swift */,
+				4C9C4FB328E4E9D000649009 /* AccountViewController.swift */,
+				4C0FF52228E8F2E30004F607 /* cartViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -152,8 +155,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C0FF52328E8F2E30004F607 /* cartViewController.swift in Sources */,
 				4C9C4FB228E4E9AC00649009 /* ShopViewController.swift in Sources */,
-				4C9C4FB428E4E9D000649009 /* UserViewController.swift in Sources */,
+				4C9C4FB428E4E9D000649009 /* AccountViewController.swift in Sources */,
 				4C9C4FA128E4E78900649009 /* HomeViewController.swift in Sources */,
 				4C9C4F9D28E4E78900649009 /* AppDelegate.swift in Sources */,
 				4C9C4F9F28E4E78900649009 /* SceneDelegate.swift in Sources */,

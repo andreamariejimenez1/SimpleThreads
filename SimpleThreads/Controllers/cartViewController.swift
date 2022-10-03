@@ -1,18 +1,18 @@
 //
-//  UserViewController.swift
+//  SearchViewController.swift
 //  SimpleThreads
 //
-//  Created by Andrea Jimenez on 9/28/22.
+//  Created by Andrea Jimenez on 10/1/22.
 //
 
 import UIKit
 
-class UserViewController: UIViewController {
+class cartViewController: UIViewController {
+    
+ 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
 
