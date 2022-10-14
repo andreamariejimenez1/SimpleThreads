@@ -1,39 +1,33 @@
-//
 //  ViewController.swift
 //  SimpleThreads
-//
-//  Created by Andrea Jimenez on 9/28/22.
-//
+//  Created by Andrea Jimenez on 9/28/22
 
 import UIKit
 
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var featuredCollectionView: UICollectionView!
-    
-//    let searchController = UISearchController()
+    let searchController = UISearchController()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         featuredCollectionView.dataSource = self
-//        navigationItem.searchController = searchController
-//        searchController.searchBar.isHidden = true
-        
-        
-        
+        navigationItem.searchController = searchController
+        searchController.searchBar.isHidden = true
     }
     
     @IBAction func onTap(_ sender: Any) {
-//        searchController.isActive = true
-//        searchController.searchBar.isHidden = false
+        searchController.isActive = true
+        searchController.searchBar.isHidden = false
     }
 }
 
+// Collection View Datasource Methods
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -42,6 +36,7 @@ extension HomeViewController: UICollectionViewDataSource {
         return cell
     }
     
+    // Setup header for collection view
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         if kind == UICollectionView.elementKindSectionHeader {
