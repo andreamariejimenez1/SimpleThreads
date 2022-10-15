@@ -113,7 +113,7 @@
                                         <size key="customSize" width="170" height="240"/>
                                         <connections>
                                             <outlet property="productImage" destination="Eab-jN-mlP" id="w9a-Ws-Sgo"/>
-                                            <outlet property="productLabel" destination="LKn-mG-zEP" id="2c2-rV-vuk"/>
+                                            <outlet property="productNameLabel" destination="LKn-mG-zEP" id="2c2-rV-vuk"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

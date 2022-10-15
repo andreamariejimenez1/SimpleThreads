@@ -20,7 +20,6 @@
 		4CAD06EF28F8A40D009622F6 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAD06EE28F8A40D009622F6 /* ProductCollectionViewCell.swift */; };
 		4CAD06F128F8A9F0009622F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CAD06F028F8A9F0009622F6 /* GoogleService-Info.plist */; };
 		4CAD06F428F8AB39009622F6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4CAD06F328F8AB39009622F6 /* FirebaseAnalytics */; };
-		4CAD06F628F8AB39009622F6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 4CAD06F528F8AB39009622F6 /* FirebaseDatabase */; };
 		4CAD06F828F8AB39009622F6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4CAD06F728F8AB39009622F6 /* FirebaseFirestore */; };
 		4CAD06FA28F8AB39009622F6 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4CAD06F928F8AB39009622F6 /* FirebaseFirestoreSwift */; };
 		4CAD06FC28F8AB39009622F6 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 4CAD06FB28F8AB39009622F6 /* FirebaseFunctions */; };
@@ -51,7 +50,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CAD06FE28F8AB39009622F6 /* FirebaseMessaging in Frameworks */,
-				4CAD06F628F8AB39009622F6 /* FirebaseDatabase in Frameworks */,
 				4CAD06F428F8AB39009622F6 /* FirebaseAnalytics in Frameworks */,
 				4CAD06FC28F8AB39009622F6 /* FirebaseFunctions in Frameworks */,
 				4CAD070028F8AB39009622F6 /* FirebaseStorage in Frameworks */,
@@ -83,6 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				4CAD06EE28F8A40D009622F6 /* ProductCollectionViewCell.swift */,
+				4CAD070128FB126C009622F6 /* Model */,
+				4CAD070228FB1273009622F6 /* Views */,
 				4C9C4FB028E4E94800649009 /* Controllers */,
 				4C9C4F9C28E4E78900649009 /* AppDelegate.swift */,
 				4C9C4F9E28E4E78900649009 /* SceneDelegate.swift */,
@@ -107,6 +107,20 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		4CAD070128FB126C009622F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4CAD070228FB1273009622F6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,7 +139,6 @@
 			name = SimpleThreads;
 			packageProductDependencies = (
 				4CAD06F328F8AB39009622F6 /* FirebaseAnalytics */,
-				4CAD06F528F8AB39009622F6 /* FirebaseDatabase */,
 				4CAD06F728F8AB39009622F6 /* FirebaseFirestore */,
 				4CAD06F928F8AB39009622F6 /* FirebaseFirestoreSwift */,
 				4CAD06FB28F8AB39009622F6 /* FirebaseFunctions */,
@@ -433,11 +446,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4CAD06F228F8AB39009622F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
-		};
-		4CAD06F528F8AB39009622F6 /* FirebaseDatabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4CAD06F228F8AB39009622F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabase;
 		};
 		4CAD06F728F8AB39009622F6 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
