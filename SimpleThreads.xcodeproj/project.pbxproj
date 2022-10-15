@@ -25,6 +25,7 @@
 		4CAD06FC28F8AB39009622F6 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 4CAD06FB28F8AB39009622F6 /* FirebaseFunctions */; };
 		4CAD06FE28F8AB39009622F6 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 4CAD06FD28F8AB39009622F6 /* FirebaseMessaging */; };
 		4CAD070028F8AB39009622F6 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4CAD06FF28F8AB39009622F6 /* FirebaseStorage */; };
+		4CAD070428FB15B8009622F6 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAD070328FB15B7009622F6 /* Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		4CAD06EC28F8A354009622F6 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		4CAD06EE28F8A40D009622F6 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		4CAD06F028F8A9F0009622F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4CAD070328FB15B7009622F6 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		4CAD070128FB126C009622F6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4CAD070328FB15B7009622F6 /* Test.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			files = (
 				4C0FF52328E8F2E30004F607 /* CartViewController.swift in Sources */,
 				4C9C4FB228E4E9AC00649009 /* ShopViewController.swift in Sources */,
+				4CAD070428FB15B8009622F6 /* Test.swift in Sources */,
 				4CAD06EF28F8A40D009622F6 /* ProductCollectionViewCell.swift in Sources */,
 				4C9C4FB428E4E9D000649009 /* AccountViewController.swift in Sources */,
 				4CAD06ED28F8A354009622F6 /* ProductViewController.swift in Sources */,
