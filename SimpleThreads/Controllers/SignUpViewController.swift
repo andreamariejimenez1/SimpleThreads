@@ -6,8 +6,18 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class SignUpViewController: UIViewController {
+    
+    var firstName: String?
+    var lastName: String?
+    var email: String?
+    var password: String?
+    var db: Firestore!
+    
+    // MARK: - Text Fields didSet
 
     @IBOutlet weak var firstNameTextField: UITextField! {
         didSet {
@@ -35,14 +45,74 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    // MARK: - View Did Load
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        db = Firestore.firestore()
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        reEnterPasswordTextField.delegate = self
+        
+        firstNameTextField.becomeFirstResponder()
     }
     
+    // MARK: - IBActions
+    
+    @IBAction func createMyAccountTapped(_ sender: UIButton) {
+        
+        // check that none of our fields are empty using optional binding
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            // then we authenticate with email and password
+            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                if let e = error {
+                    print(e)
+                } else {
+                    // navigate to the HomeViewController
+                    print("Successful")
+                }
+            
+                // useriD, firstName, lastName, email -> create user in db
+            }
+        }
+    }
+    
+    // MARK: - Functions
+    
+    // add user info to database : first name, last name, email
+    private func createUserInDB(id userID: String, firstName: String?, lastName: String?, email: String?) {
+        let userData: [String: Any] = [
+            "firstName" : firstName ?? "",
+            "lastName" : lastName ?? "",
+            "email" : email ?? ""
+        ]
+        
+        db.collection("users").document(userID).setData(userData) { error in
+            // add user data to collection
+            if let e = error {
+                print(e)
+            } else {
+                // user data was added to database
+            }
+        }
+    }
 
+    @IBAction func unwindToSignUp(_ sender: UIStoryboardSegue) {
+        
+    }
+    
 }
+
+// MARK: - TextField Delegates
+
+extension SignUpViewController: UITextFieldDelegate {
+    
+}
+
+// MARK: - TextField Configurations
 
 extension UITextField {
     

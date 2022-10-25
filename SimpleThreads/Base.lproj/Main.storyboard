@@ -805,6 +805,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="CREATE  MY ACCOUNT" cornerStyle="large">
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="createMyAccountTapped:" destination="Hmy-LH-iWN" eventType="touchUpInside" id="YoF-AH-QXu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PmG-BE-eeR"/>
@@ -864,6 +867,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="LOG IN" cornerStyle="large">
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="logInTapped:" destination="U6c-cW-sfy" eventType="touchUpInside" id="Zly-WB-sio"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRJ-Ch-gJx">
                                 <rect key="frame" x="60" y="369" width="171" height="19"/>
@@ -880,6 +886,9 @@
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                     <color key="baseForegroundColor" red="0.43561746277888747" green="0.51427318615033268" blue="0.60772181940171244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="TjM-wb-ebo" kind="unwind" unwindAction="unwindToSignUp:" id="v1S-GZ-qbK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pHz-qQ-bVq"/>
@@ -891,6 +900,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJn-RS-0Yt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="TjM-wb-ebo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2454.6728971962616" y="-130.23758099352054"/>
         </scene>
