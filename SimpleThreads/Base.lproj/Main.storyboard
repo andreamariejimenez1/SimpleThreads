@@ -708,9 +708,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhc-ft-Wcz">
-                                <rect key="frame" x="39" y="647" width="350" height="35.666666666666629"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhc-ft-Wcz">
+                                <rect key="frame" x="39" y="655.66666666666663" width="350" height="35.666666666666629"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
@@ -722,9 +721,8 @@
                                     <segue destination="U6c-cW-sfy" kind="show" id="3vO-Z8-m63"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeK-IJ-yDF">
-                                <rect key="frame" x="39" y="711" width="350" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeK-IJ-yDF">
+                                <rect key="frame" x="39" y="721.33333333333337" width="350" height="35.666666666666629"/>
                                 <color key="backgroundColor" systemColor="labelColor"/>
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
@@ -736,8 +734,8 @@
                                     <segue destination="Hmy-LH-iWN" kind="show" id="hCc-o3-0uF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="👕T-Shirt Zone " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8j-As-dx0">
-                                <rect key="frame" x="20" y="311" width="370" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👕T-Shirt Zone " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8j-As-dx0">
+                                <rect key="frame" x="10" y="311" width="408" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Bjg-jb-3JJ"/>
                                 </constraints>
@@ -749,7 +747,17 @@
                         <viewLayoutGuide key="safeArea" id="NKU-fz-P2g"/>
                         <color key="backgroundColor" red="0.87010239109848486" green="0.87010239109848486" blue="0.87010239109848486" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="q8j-As-dx0" firstAttribute="top" secondItem="cyf-Pd-xJJ" secondAttribute="topMargin" constant="264" id="cvA-bW-o9z"/>
+                            <constraint firstItem="NKU-fz-P2g" firstAttribute="trailing" secondItem="Fhc-ft-Wcz" secondAttribute="trailing" constant="39" id="Bbe-f1-9Lx"/>
+                            <constraint firstItem="XeK-IJ-yDF" firstAttribute="top" secondItem="Fhc-ft-Wcz" secondAttribute="bottom" constant="30" id="Dyf-bK-tR7"/>
+                            <constraint firstItem="q8j-As-dx0" firstAttribute="top" secondItem="NKU-fz-P2g" secondAttribute="top" constant="264" id="G8j-xc-4bX"/>
+                            <constraint firstItem="NKU-fz-P2g" firstAttribute="bottom" secondItem="XeK-IJ-yDF" secondAttribute="bottom" constant="135" id="GSr-ci-1G7"/>
+                            <constraint firstItem="NKU-fz-P2g" firstAttribute="trailing" secondItem="q8j-As-dx0" secondAttribute="trailing" constant="10" id="Q0J-ZM-s4K"/>
+                            <constraint firstItem="q8j-As-dx0" firstAttribute="leading" secondItem="NKU-fz-P2g" secondAttribute="leading" constant="10" id="cDC-5X-XHN"/>
+                            <constraint firstItem="q8j-As-dx0" firstAttribute="top" secondItem="cyf-Pd-xJJ" secondAttribute="topMargin" constant="264" id="goZ-pX-XLq"/>
+                            <constraint firstItem="Fhc-ft-Wcz" firstAttribute="leading" secondItem="NKU-fz-P2g" secondAttribute="leading" constant="39" id="mum-mp-yVE"/>
+                            <constraint firstItem="XeK-IJ-yDF" firstAttribute="leading" secondItem="NKU-fz-P2g" secondAttribute="leading" constant="39" id="qiu-pc-b1a"/>
+                            <constraint firstItem="XeK-IJ-yDF" firstAttribute="top" secondItem="Fhc-ft-Wcz" secondAttribute="bottom" constant="30" id="sSC-Fr-7Ss"/>
+                            <constraint firstItem="NKU-fz-P2g" firstAttribute="trailing" secondItem="XeK-IJ-yDF" secondAttribute="trailing" constant="39" id="z1A-96-qfK"/>
                         </constraints>
                     </view>
                     <connections>
@@ -923,7 +931,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="hCc-o3-0uF"/>
-        <segue reference="Jti-VZ-hWK"/>
+        <segue reference="gur-Zx-i6O"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Black Shirt" width="1322" height="1320"/>
