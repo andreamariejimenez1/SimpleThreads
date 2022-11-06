@@ -35,3 +35,7 @@ struct ViewControllers {
     static let signUp = "signUp"
 }
 
+struct Segues{
+    static let loginSegue = "LoginToApp"
+    static let signupSegue = "SignUpToApp"
+}
