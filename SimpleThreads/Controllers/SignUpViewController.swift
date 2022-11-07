@@ -16,9 +16,10 @@ class SignUpViewController: UIViewController {
     var email: String?
     var password: String?
     var db: Firestore!
+    var user: User?
     
-    // MARK: - Text Fields didSet
-
+    // MARK: - TextFields didSet
+    
     @IBOutlet weak var firstNameTextField: UITextField! {
         didSet {
             firstNameTextField.configureTextField(withIcon: Icons.person, placeHolder: "First Name")
@@ -45,11 +46,11 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    // MARK: - View Did Load
+    // MARK: - View DidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         db = Firestore.firestore()
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
@@ -64,18 +65,21 @@ class SignUpViewController: UIViewController {
     
     @IBAction func createMyAccountTapped(_ sender: UIButton) {
         
-        // check that none of our fields are empty using optional binding
+        // check that none of our fields are nil using optional binding
         if let email = emailTextField.text, let password = passwordTextField.text {
-            // then we authenticate with email and password
-            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                if let e = error {
-                    print(e)
-                } else {
-                    // navigate to the HomeViewController
-                    print("Successful")
+            // then we create user with email and password
+            Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
+                guard let currentUser = authResult?.user, error == nil else {
+                    print(error!)
+                    return
                 }
-            
-                // useriD, firstName, lastName, email -> create user in db
+                // navigate to the HomeViewController
+                print("Successful")
+                guard let firstName = self?.firstNameTextField.text, let lastName = self?.lastNameTextField.text, let email = self?.emailTextField.text else {
+                    print("Problem getting user details")
+                    return
+                }
+                self?.createUserInDB(id: currentUser.uid, firstName: firstName, lastName: lastName, email: email)
             }
         }
     }
@@ -84,22 +88,24 @@ class SignUpViewController: UIViewController {
     
     // add user info to database : first name, last name, email
     private func createUserInDB(id userID: String, firstName: String?, lastName: String?, email: String?) {
+        
         let userData: [String: Any] = [
             "firstName" : firstName ?? "",
             "lastName" : lastName ?? "",
             "email" : email ?? ""
         ]
         
+        // add document ???
         db.collection("users").document(userID).setData(userData) { error in
             // add user data to collection
             if let e = error {
-                print(e)
+                print("Error writing document: \(e)")
             } else {
-                // user data was added to database
+                print("Document successfully written!")
             }
         }
     }
-
+    
     @IBAction func unwindToSignUp(_ sender: UIStoryboardSegue) {
         
     }

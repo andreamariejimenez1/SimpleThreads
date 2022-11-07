@@ -828,6 +828,7 @@
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="createMyAccountTapped:" destination="Hmy-LH-iWN" eventType="touchUpInside" id="hQQ-WT-dye"/>
                                     <segue destination="leW-i6-qed" kind="show" identifier="SignUpToApp" id="gur-Zx-i6O"/>
                                 </connections>
                             </button>
@@ -846,7 +847,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8S-TG-60K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-932" y="-884"/>
+            <point key="canvasLocation" x="-705" y="-883"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="LsA-Oo-Lmd">
@@ -930,7 +931,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="hCc-o3-0uF"/>
-        <segue reference="Jti-VZ-hWK"/>
+        <segue reference="gur-Zx-i6O"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Black Shirt" width="1322" height="1320"/>
