@@ -8,6 +8,11 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
+    
+    // Variable to track when we show the WelcomeViewController from the signInViewController
+    // This is defaulted to false and only set to true when the user pressed "Create account"
+    // from the signInViewController
+    var fromSignIn = false
 
     
     @IBAction func logInButton(_ sender: UIButton) {
@@ -47,5 +52,23 @@ class WelcomeViewController: UIViewController {
         }
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        // Because signIn is a half sheet, viewDidAppear is only called once so this block won't
+        // get evaluated after the signIn View Controller is dismissed by the unwind segue
+        // TODO: Figure out a different way to notify the app that it needs to show the signUp View controller
+        if fromSignIn {
+            performSegue(withIdentifier: Segues.signupSegue, sender: self)
+            fromSignIn = false
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.signupSegue {
+            let _ = segue.destination as? SignUpViewController
+        }
+    }
+    
+    @IBAction func unwindToWelcome(_ sender: UIStoryboardSegue) {}
 }

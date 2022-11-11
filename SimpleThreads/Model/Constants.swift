@@ -33,9 +33,15 @@ struct ViewControllers {
     
     static let signIn = "signIn"
     static let signUp = "signUp"
+    static let tabBar = "TabBarViewController"
 }
 
-struct Segues{
+struct Segues {
     static let loginSegue = "LoginToApp"
     static let signupSegue = "SignUpToApp"
+    static let unwindToWelcome = "unwindToWelcome"
+}
+
+struct Notifications {
+    static let showHome = Notification.Name("showHomeScreen")
 }
