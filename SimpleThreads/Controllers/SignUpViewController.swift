@@ -73,12 +73,13 @@ class SignUpViewController: UIViewController {
                     print(error!)
                     return
                 }
-                // navigate to the HomeViewController
-                print("Successful")
+                // Make sure we have non nil values to create a user
                 guard let firstName = self?.firstNameTextField.text, let lastName = self?.lastNameTextField.text, let email = self?.emailTextField.text else {
                     print("Problem getting user details")
                     return
                 }
+                
+                // Create user in DB
                 self?.createUserInDB(id: currentUser.uid, firstName: firstName, lastName: lastName, email: email)
             }
         }
@@ -101,15 +102,15 @@ class SignUpViewController: UIViewController {
             if let e = error {
                 print("Error writing document: \(e)")
             } else {
+                // once we have succesfully created a user in the DB we can navigate to the home screen
+                
+                // Create a post the showHomeScreen notification to the apps notification center
+                // For now, this is better practice than using segues everywhere
+                NotificationCenter.default.post(name: Notifications.showHome, object: nil)
                 print("Document successfully written!")
             }
         }
-    }
-    
-    @IBAction func unwindToSignUp(_ sender: UIStoryboardSegue) {
-        
-    }
-    
+    }    
 }
 
 // MARK: - TextField Delegates
