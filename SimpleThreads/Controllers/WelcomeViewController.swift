@@ -9,6 +9,18 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
+    @IBOutlet weak var logInButton: UIButton! {
+        didSet {
+            logInButton.layer.cornerRadius = 12
+        }
+    }
+    @IBOutlet weak var createAccountButton: UIButton! {
+        didSet {
+            createAccountButton.layer.cornerRadius = 12
+        }
+    }
+    
+    
     // Variable to track when we show the WelcomeViewController from the signInViewController
     // This is defaulted to false and only set to true when the user pressed "Create account"
     // from the signInViewController
@@ -41,16 +53,8 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        titleLabel.text = ""
-        var charIndex = 0
-        let titleText = "👕T-Shirt Zone"
-        for letter in titleText{
-            Timer.scheduledTimer(withTimeInterval: 0.1 * Double(charIndex), repeats: false) { timer in
-                self.titleLabel.text?.append(letter)
-            }
-            charIndex += 1
-        }
         // Do any additional setup after loading the view.
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
