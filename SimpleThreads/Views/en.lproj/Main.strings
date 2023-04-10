@@ -1,0 +1,183 @@
+
+/* Class = "UINavigationItem"; title = "Home"; ObjectID = "0Gf-rS-mjz"; */
+"0Gf-rS-mjz.title" = "Home";
+
+/* Class = "UILabel"; text = "In Stock"; ObjectID = "50n-JW-tLc"; */
+"50n-JW-tLc.text" = "In Stock";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "9lS-eY-Dpk"; */
+"9lS-eY-Dpk.title" = "Item";
+
+/* Class = "UIButton"; configuration.title = "XS"; ObjectID = "AYW-df-d2V"; */
+"AYW-df-d2V.configuration.title" = "XS";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "CLh-TE-Xpx"; */
+"CLh-TE-Xpx.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "E-mail"; ObjectID = "Ejx-CD-FJT"; */
+"Ejx-CD-FJT.placeholder" = "E-mail";
+
+/* Class = "UIButton"; configuration.title = "LOG IN"; ObjectID = "Fhc-ft-Wcz"; */
+"Fhc-ft-Wcz.configuration.title" = "LOG IN";
+
+/* Class = "UIButton"; normalTitle = "LOG IN"; ObjectID = "Fhc-ft-Wcz"; */
+"Fhc-ft-Wcz.normalTitle" = "LOG IN";
+
+/* Class = "UITabBarItem"; title = "Shop"; ObjectID = "GNX-GI-bBg"; */
+"GNX-GI-bBg.title" = "Shop";
+
+/* Class = "UIViewController"; title = "Sign Up View Controller"; ObjectID = "Hmy-LH-iWN"; */
+"Hmy-LH-iWN.title" = "Sign Up View Controller";
+
+/* Class = "UILabel"; text = "Product Name"; ObjectID = "IbQ-9f-zTU"; */
+"IbQ-9f-zTU.text" = "Product Name";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "JFm-7g-1Sp"; */
+"JFm-7g-1Sp.title" = "Item";
+
+/* Class = "UITabBarItem"; title = "Account"; ObjectID = "KRw-0R-syY"; */
+"KRw-0R-syY.title" = "Account";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "LKn-mG-zEP"; */
+"LKn-mG-zEP.text" = "Label";
+
+/* Class = "UIButton"; configuration.title = "LOG IN"; ObjectID = "MLJ-1g-X9b"; */
+"MLJ-1g-X9b.configuration.title" = "LOG IN";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "MLJ-1g-X9b"; */
+"MLJ-1g-X9b.normalTitle" = "Button";
+
+/* Class = "UIViewController"; title = "Home View Controller"; ObjectID = "Mdu-yQ-DkI"; */
+"Mdu-yQ-DkI.title" = "Home View Controller";
+
+/* Class = "UITextField"; placeholder = "Re-Enter Password"; ObjectID = "MoO-tl-5PV"; */
+"MoO-tl-5PV.placeholder" = "Re-Enter Password";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "NbL-dt-kOZ"; */
+"NbL-dt-kOZ.normalTitle" = "Button";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "ONH-WK-iO0"; */
+"ONH-WK-iO0.title" = "Item";
+
+/* Class = "UIButton"; configuration.title = "L"; ObjectID = "PNx-S0-0k3"; */
+"PNx-S0-0k3.configuration.title" = "L";
+
+/* Class = "UILabel"; text = "Description goes here"; ObjectID = "QBS-Gy-v6R"; */
+"QBS-Gy-v6R.text" = "Description goes here";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ScI-zG-Xc1"; */
+"ScI-zG-Xc1.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "S"; ObjectID = "Sml-PQ-aFH"; */
+"Sml-PQ-aFH.configuration.title" = "S";
+
+/* Class = "UIViewController"; title = "Sign In View Controller"; ObjectID = "U6c-cW-sfy"; */
+"U6c-cW-sfy.title" = "Sign In View Controller";
+
+/* Class = "UINavigationItem"; title = "Product"; ObjectID = "Urn-Da-6Fy"; */
+"Urn-Da-6Fy.title" = "Product";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "W3r-tO-kt6"; */
+"W3r-tO-kt6.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "Product Description"; ObjectID = "WHG-pc-MF8"; */
+"WHG-pc-MF8.text" = "Product Description";
+
+/* Class = "UIButton"; configuration.title = "CREATE ACCOUNT"; ObjectID = "XeK-IJ-yDF"; */
+"XeK-IJ-yDF.configuration.title" = "CREATE ACCOUNT";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "XeK-IJ-yDF"; */
+"XeK-IJ-yDF.normalTitle" = "Button";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "XgJ-uN-xdB"; */
+"XgJ-uN-xdB.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Xiz-fB-CnQ"; */
+"Xiz-fB-CnQ.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "First Name"; ObjectID = "Y3W-a2-GCa"; */
+"Y3W-a2-GCa.placeholder" = "First Name";
+
+/* Class = "UIButton"; configuration.title = "M"; ObjectID = "YdO-e9-V5C"; */
+"YdO-e9-V5C.configuration.title" = "M";
+
+/* Class = "UIButton"; configuration.title = "XXL"; ObjectID = "aKq-O3-AJa"; */
+"aKq-O3-AJa.configuration.title" = "XXL";
+
+/* Class = "UILabel"; text = "Enter your information bellow"; ObjectID = "aZd-Wo-CIf"; */
+"aZd-Wo-CIf.text" = "Enter your information bellow";
+
+/* Class = "UITextField"; placeholder = "E-mail"; ObjectID = "b4p-8V-IyZ"; */
+"b4p-8V-IyZ.placeholder" = "E-mail";
+
+/* Class = "UILabel"; text = "Colors"; ObjectID = "bN4-pN-duP"; */
+"bN4-pN-duP.text" = "Colors";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "bo8-7h-yhi"; */
+"bo8-7h-yhi.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "cNp-3b-uxu"; */
+"cNp-3b-uxu.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "WELCOME BACK!"; ObjectID = "cPX-KQ-Opy"; */
+"cPX-KQ-Opy.text" = "WELCOME BACK!";
+
+/* Class = "UIButton"; configuration.title = "Create an account!"; ObjectID = "dWa-wt-L5d"; */
+"dWa-wt-L5d.configuration.title" = "Create an account!";
+
+/* Class = "UINavigationItem"; title = "Account"; ObjectID = "fUc-3X-7tL"; */
+"fUc-3X-7tL.title" = "Account";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "iyl-ar-ghc"; */
+"iyl-ar-ghc.title" = "Home";
+
+/* Class = "UILabel"; text = "LET'S GET STARTED!"; ObjectID = "kv6-aa-6k9"; */
+"kv6-aa-6k9.text" = "LET'S GET STARTED!";
+
+/* Class = "UIButton"; configuration.title = "ADD TO BAG"; ObjectID = "l5q-Qy-KJe"; */
+"l5q-Qy-KJe.configuration.title" = "ADD TO BAG";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "l5q-Qy-KJe"; */
+"l5q-Qy-KJe.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "mmC-uf-yRX"; */
+"mmC-uf-yRX.placeholder" = "Last Name";
+
+/* Class = "UIViewController"; title = "Welcome View Controller"; ObjectID = "mqM-tA-ijn"; */
+"mqM-tA-ijn.title" = "Welcome View Controller";
+
+/* Class = "UINavigationItem"; title = "Shop"; ObjectID = "o6a-UL-zL2"; */
+"o6a-UL-zL2.title" = "Shop";
+
+/* Class = "UILabel"; text = "Don't have an account?"; ObjectID = "pRJ-Ch-gJx"; */
+"pRJ-Ch-gJx.text" = "Don't have an account?";
+
+/* Class = "UILabel"; text = "Size"; ObjectID = "q8O-0S-mY5"; */
+"q8O-0S-mY5.text" = "Size";
+
+/* Class = "UIViewController"; title = "Shop View Controller"; ObjectID = "qoC-8Z-iX8"; */
+"qoC-8Z-iX8.title" = "Shop View Controller";
+
+/* Class = "UIButton"; configuration.title = "CREATE  MY ACCOUNT"; ObjectID = "sOl-fe-aXp"; */
+"sOl-fe-aXp.configuration.title" = "CREATE  MY ACCOUNT";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "sOl-fe-aXp"; */
+"sOl-fe-aXp.normalTitle" = "Button";
+
+/* Class = "UIViewController"; title = "Product View Controller"; ObjectID = "tdc-s3-VYb"; */
+"tdc-s3-VYb.title" = "Product View Controller";
+
+/* Class = "UILabel"; text = "$"; ObjectID = "v5y-BH-asv"; */
+"v5y-BH-asv.text" = "$";
+
+/* Class = "UIViewController"; title = "Account View Controller"; ObjectID = "vXo-m5-5Jx"; */
+"vXo-m5-5Jx.title" = "Account View Controller";
+
+/* Class = "UILabel"; text = "Enter your information bellow"; ObjectID = "vjN-jC-nny"; */
+"vjN-jC-nny.text" = "Enter your information bellow";
+
+/* Class = "UIButton"; configuration.title = "XL"; ObjectID = "woq-H2-LHz"; */
+"woq-H2-LHz.configuration.title" = "XL";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "zvH-xd-Fhu"; */
+"zvH-xd-Fhu.placeholder" = "Password";

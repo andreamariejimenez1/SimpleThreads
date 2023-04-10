@@ -18,83 +18,52 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         featuredCollectionView.dataSource = self
+        featuredCollectionView.delegate = self
         navigationItem.searchController = searchController
         searchController.searchBar.isHidden = true
-        retrievePhotos()
     }
     
     @IBAction func onTap(_ sender: Any) {
         searchController.isActive = true
         searchController.searchBar.isHidden = false
     }
-    
-    // Retrieve images from DB
-    func retrievePhotos() {
-        // Get data from database
-        let db = Firestore.firestore()
-        db.collection("products").getDocuments { snapshot, error in
-            guard let docSnapshot = snapshot, error == nil else { return }
-            var images = [String]()
-            // we want to go into each document and in each document get the url of the image
-            for doc in docSnapshot.documents {
-                // extract file image path
-                let imageName = doc["imageName"]
-                images.append(imageName as! String)
-            }
-            // get reference to storage
-            let storageRef = Storage.storage().reference()
-            // Loop thorugh each file path and fetch the data from storage
-            for imageName in images {
-                
-                // specify the path
-                let imageRef = storageRef.child(imageName)
-                imageRef.getData(maxSize: 5 * 1024 * 1024) { imageData, error in
-                    // Check for possible errors
-                    guard let imageData = imageData, error == nil else {
-                        print("Error get image data: \(error)")
-                        return
-                    }
-                    
-                    // If we are able to create an image from the image data, jump back to the main thread and append the
-                    // new image to the retrievedImages array.
-                    if let image = UIImage(data: imageData) {
-                        DispatchQueue.main.async {
-                            self.retrievedImages.append(image)
-                        }
-                        
-                    } else {
-                        print("Error creating image from data")
-                    }
-                }
-            }
-            // reload collection to show updates when retrievedImages is populated with images
-            self.featuredCollectionView.reloadData()
-        }
-    }
 }
 
-// Collection View Datasource Methods
+// MARK: - UICollectionView Datasource
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(retrievedImages.count)
-        return retrievedImages.count
+        return Item.sampleData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        // cell.layer.cornerRadius = 25
-        return cell
+        guard let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.collectionView , for: indexPath) as? ProductCollectionViewCell else { return UICollectionViewCell() }
+        
+        let item = Item.sampleData[indexPath.item]
+        collectionCell.configure(with: item)
+        
+        return collectionCell
     }
     
     // Setup header for collection view
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         if kind == UICollectionView.elementKindSectionHeader {
-            let featuredHeaderview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "featuredHeader", for: indexPath)
+            let featuredHeaderview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CellIdentifiers.collectionViewHeader, for: indexPath)
             return featuredHeaderview
         } else {
             return UICollectionReusableView()
         }
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let product = Item.sampleData[indexPath.item]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let productDetailViewController = storyboard.instantiateViewController(withIdentifier: "ProductDetailViewController") as? ProductDetailViewController else { return }
+        productDetailViewController.item = product
+        navigationController?.pushViewController(productDetailViewController, animated: true)
     }
 }
 

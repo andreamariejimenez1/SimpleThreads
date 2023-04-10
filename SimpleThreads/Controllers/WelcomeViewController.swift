@@ -54,8 +54,6 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        view.backgroundColor = .mangentaPurple
     }
     
     override func viewDidAppear(_ animated: Bool) {

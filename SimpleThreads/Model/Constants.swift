@@ -18,7 +18,11 @@ struct CellIdentifiers {
     
     
     /// The cell identifier to be used in the collection view protocol methods.
-    static let collectionView = "sample string"
+    static let collectionView = "cell"
+    static let collectionViewHeader = "featuredHeader"
+    static let productionDetailSectionOne = "ProductDetailSectionOneCell"
+    static let productionDetailSectionTwo = "ProductDetailSectionTwoCell"
+    static let productionDetailSectionThree = "ProductDetailSectionThreeCell"
     
 }
 
@@ -42,6 +46,7 @@ struct Segues {
     static let unwindToWelcome = "unwindToWelcome"
 }
 
+/// The notification names that will sent to NotificationCenter
 struct Notifications {
     static let showHome = Notification.Name("showHomeScreen")
 }
