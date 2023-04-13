@@ -142,8 +142,8 @@
                     <navigationItem key="navigationItem" title="Home" id="0Gf-rS-mjz">
                         <rightBarButtonItems>
                             <barButtonItem title="Item" style="plain" id="ONH-WK-iO0">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ScI-zG-Xc1">
-                                    <rect key="frame" x="349" y="1" width="59" height="42"/>
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="ScI-zG-Xc1">
+                                    <rect key="frame" x="349" y="1" width="34" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Button"/>
@@ -157,6 +157,9 @@
                                         </imageReference>
                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="23"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="onTapCartButton:" destination="Mdu-yQ-DkI" eventType="touchUpInside" id="US6-IW-XNH"/>
+                                    </connections>
                                 </button>
                             </barButtonItem>
                             <barButtonItem title="Item" style="plain" id="XgJ-uN-xdB">
@@ -185,6 +188,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="featuredCollectionView" destination="GSa-se-LYU" id="Nqw-H5-Slx"/>
+                        <outlet property="shoppingCartButton" destination="ScI-zG-Xc1" id="fi2-LK-F6X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oKK-Yi-uUF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -370,7 +374,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="Bb7-SR-X8v">
-                                    <rect key="frame" x="0.0" y="267.33333206176752" width="428" height="252.00000000000006"/>
+                                    <rect key="frame" x="0.0" y="267.33333206176758" width="428" height="252"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LeP-Oy-PVc">
@@ -736,10 +740,10 @@
             </objects>
             <point key="canvasLocation" x="-1103.2710280373831" y="2691.5766738660909"/>
         </scene>
-        <!--View Controller-->
+        <!--ConfirmationViewController-->
         <scene sceneID="PMb-Io-s5K">
             <objects>
-                <viewController id="GDw-6E-stL" sceneMemberID="viewController">
+                <viewController title="ConfirmationViewController" id="GDw-6E-stL" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RCO-mB-cKF">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
