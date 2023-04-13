@@ -14,6 +14,9 @@ class ProductDetailViewController: UIViewController {
 
     @IBOutlet weak var productDetailTableView: UITableView!
     
+    @IBAction func addToBagTapped(_ sender: UIButton) {
+        print("pressed")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

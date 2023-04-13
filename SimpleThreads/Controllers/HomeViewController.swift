@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     
     // MARK: - Creating a badge (UILabel) for cart button
     let badgeSize: CGFloat = 20
-    let badgeTag = 9830384
+    let badgeTag = 100
 
     // Configuration
     func badgeLabel(with text: String) -> UILabel {
@@ -73,7 +73,6 @@ class HomeViewController: UIViewController {
         
         // the following code is for debugging purposes and make sure the badge is working properly
         print("Cart Button Tapped")
-        //tabBarController?.tabBar.items?.last?.badgeValue = ""
         showBadge(with: badgeText)
     }
     

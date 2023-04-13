@@ -27,7 +27,7 @@ class WelcomeViewController: UIViewController {
     var fromSignIn = false
 
     
-    @IBAction func logInButton(_ sender: UIButton) {
+    @IBAction func logInButtonPressed(_ sender: UIButton) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let signInVC = storyboard.instantiateViewController(withIdentifier: ViewControllers.signIn) as? SignInViewController else { return }
