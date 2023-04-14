@@ -23,6 +23,7 @@ struct CellIdentifiers {
     static let productionDetailSectionOne = "ProductDetailSectionOneCell"
     static let productionDetailSectionTwo = "ProductDetailSectionTwoCell"
     static let productionDetailSectionThree = "ProductDetailSectionThreeCell"
+    static let accountTableViewCell = "accountCell"
     
 }
 

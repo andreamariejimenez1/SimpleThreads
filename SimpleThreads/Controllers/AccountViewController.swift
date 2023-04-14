@@ -8,22 +8,39 @@
 import UIKit
 
 class AccountViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var accountTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        accountTableView.dataSource = self
+        accountTableView.delegate = self
         // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension AccountViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return AccountInformation.accountSampleData.count
     }
-    */
 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let accountCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.accountTableViewCell, for: indexPath) as? AccountTableViewCell else { return UITableViewCell() }
+        
+        let item = AccountInformation.accountSampleData[indexPath.item]
+        accountCell.configure(with: item)
+        print(item)
+        
+        return accountCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("The following cell was selected/tapped -> \(indexPath.row)")
+    }
+}
+
+extension AccountViewController: UITableViewDelegate {
+    
 }
