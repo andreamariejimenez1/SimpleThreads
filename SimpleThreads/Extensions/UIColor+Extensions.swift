@@ -53,4 +53,6 @@ extension UIColor {
     static let customGreenSweatshirt = UIColor(red: 23/255.0, green: 122/255.0, blue: 21/255.0, alpha: 1)
     static let cyanBlue = UIColor(red: 76/255.0, green: 179/255.0, blue: 178/255.0, alpha: 1)
     
+    static let appColor = UIColor(red: 118/255.0, green: 34/255.0, blue: 11/255.0, alpha: 1)
+    
 }
