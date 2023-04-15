@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
         let badgeCount = UILabel(frame: CGRect(x: 0, y: 0, width: badgeSize, height: badgeSize))
         badgeCount.translatesAutoresizingMaskIntoConstraints = false
         badgeCount.tag = badgeTag
-        badgeCount.layer.cornerRadius = badgeCount.bounds.size.height / 2
+        badgeCount.layer.cornerRadius = badgeCount.frame.size.height / 2
         badgeCount.textAlignment = .center
         badgeCount.layer.masksToBounds = true
         badgeCount.textColor = .white

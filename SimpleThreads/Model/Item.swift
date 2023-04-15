@@ -24,14 +24,23 @@ enum Price: String {
     case socks = "$8.00"
 }
 
-enum Category: String {
+enum Category: String, CaseIterable {
+    case all
     case unisexShirt
     case womensShirt
     case mensShirt
-    case sweatshirt
+    case sweatShirt
     case hoodie
     case totebag
     case socks
+    
+    func getTitle() -> String {
+        if #available(iOS 16.0, *) {
+            return self.rawValue.split(separator: "Shirt").joined(separator: " ").capitalized
+        } else {
+            return "Upgrade iOS"
+        }
+    }
 }
 
 struct Item: Identifiable {
@@ -88,12 +97,12 @@ struct Item: Identifiable {
         Item(name: "Royal Blue Unisex Hoodie", price: .hoodies, color: .blue, size: .small, image: UIImage(named: "RoyalBlueHoodie")!, category: .hoodie),
         Item(name: "Tan Unisex Hoodie", price: .hoodies, color: .tan, size: .small, image: UIImage(named: "TanHoodie")!, category: .hoodie),
         
-        Item(name: "Black Unisex Sweatshirt", price: .sweatShirts, color: .black, size: .small, image: UIImage(named: "BlackSweatshirt")!, category: .sweatshirt),
-        Item(name: "Cyan Unisex Sweatshirt", price: .sweatShirts, color: .cyanBlue, size: .small, image: UIImage(named: "CyanSweatshirt")!, category: .sweatshirt),
-        Item(name: "Green Unisex Sweatshirt", price: .sweatShirts, color: .customGreenSweatshirt, size: .small, image: UIImage(named: "GreenSweatshirt")!, category: .sweatshirt),
-        Item(name: "Navy Blue Unisex Sweatshirt", price: .sweatShirts, color: .navyBlue, size: .small, image: UIImage(named: "NavyBlueSweatshirt")!, category: .sweatshirt),
-        Item(name: "Pink Unisex Sweatshirt", price: .sweatShirts, color: .customPinkSweatshirt, size: .small, image: UIImage(named: "PinkSweatshirt")!, category: .sweatshirt),
-        Item(name: "Plum Unisex Sweatshirt", price: .sweatShirts, color: .plum, size: .small, image: UIImage(named: "PlumSweatshirt")!, category: .sweatshirt),
+        Item(name: "Black Unisex Sweatshirt", price: .sweatShirts, color: .black, size: .small, image: UIImage(named: "BlackSweatshirt")!, category: .sweatShirt),
+        Item(name: "Cyan Unisex Sweatshirt", price: .sweatShirts, color: .cyanBlue, size: .small, image: UIImage(named: "CyanSweatshirt")!, category: .sweatShirt),
+        Item(name: "Green Unisex Sweatshirt", price: .sweatShirts, color: .customGreenSweatshirt, size: .small, image: UIImage(named: "GreenSweatshirt")!, category: .sweatShirt),
+        Item(name: "Navy Blue Unisex Sweatshirt", price: .sweatShirts, color: .navyBlue, size: .small, image: UIImage(named: "NavyBlueSweatshirt")!, category: .sweatShirt),
+        Item(name: "Pink Unisex Sweatshirt", price: .sweatShirts, color: .customPinkSweatshirt, size: .small, image: UIImage(named: "PinkSweatshirt")!, category: .sweatShirt),
+        Item(name: "Plum Unisex Sweatshirt", price: .sweatShirts, color: .plum, size: .small, image: UIImage(named: "PlumSweatshirt")!, category: .sweatShirt),
         
         Item(name: "Black Ankle Socks", price: .socks, color: .black, size: .small, image: UIImage(named: "BlackAnkleSocks")!, category: .socks),
         Item(name: "Light Grey Ankle Socks", price: .socks, color: .customLightGrey, size: .small, image: UIImage(named: "LightGreyAnkleSocks")!, category: .socks),
