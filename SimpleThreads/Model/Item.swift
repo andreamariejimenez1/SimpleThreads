@@ -36,6 +36,7 @@ enum Category: String, CaseIterable {
     
     func getTitle() -> String {
         if #available(iOS 16.0, *) {
+            // IDK
             return self.rawValue.split(separator: "Shirt").joined(separator: " ").capitalized
         } else {
             return "Upgrade iOS"
