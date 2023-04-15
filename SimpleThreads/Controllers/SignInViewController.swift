@@ -12,7 +12,6 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField! {
         didSet {
             emailTextField.configureTextField(withIcon: Icons.email, placeHolder: "Email")
-            print("Did set")
         }
     }
     @IBOutlet weak var passwordTextField: UITextField! {
@@ -23,7 +22,6 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Did Load")
         // Do any additional setup after loading the view.
     }
     

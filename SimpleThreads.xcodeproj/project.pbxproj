@@ -26,6 +26,12 @@
 		4C9C4FB228E4E9AC00649009 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C4FB128E4E9AC00649009 /* ShopViewController.swift */; };
 		4C9C4FB428E4E9D000649009 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C4FB328E4E9D000649009 /* AccountViewController.swift */; };
 		4C9DC8BA29CFA535006FC687 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9DC8B929CFA535006FC687 /* UIColor+Extensions.swift */; };
+		4CA96B4729E9B7DD00028031 /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA96B4629E9B7DD00028031 /* ShopTableViewCell.swift */; };
+		4CA96B4929E9D74100028031 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA96B4829E9D74100028031 /* AccountTableViewCell.swift */; };
+		4CA96B4B29E9E08000028031 /* AccountInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA96B4A29E9E08000028031 /* AccountInformation.swift */; };
+		4CA96B4D29E9F2BA00028031 /* EditNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA96B4C29E9F2BA00028031 /* EditNameViewController.swift */; };
+		4CA96B4F29E9F2C900028031 /* EditEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA96B4E29E9F2C900028031 /* EditEmailViewController.swift */; };
+		4CA96B5129E9F2DE00028031 /* EditPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA96B5029E9F2DE00028031 /* EditPasswordViewController.swift */; };
 		4CAD06ED28F8A354009622F6 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAD06EC28F8A354009622F6 /* ProductDetailViewController.swift */; };
 		4CAD06EF28F8A40D009622F6 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAD06EE28F8A40D009622F6 /* ProductCollectionViewCell.swift */; };
 		4CAD06F428F8AB39009622F6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4CAD06F328F8AB39009622F6 /* FirebaseAnalytics */; };
@@ -60,6 +66,12 @@
 		4C9C4FB128E4E9AC00649009 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		4C9C4FB328E4E9D000649009 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		4C9DC8B929CFA535006FC687 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		4CA96B4629E9B7DD00028031 /* ShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
+		4CA96B4829E9D74100028031 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
+		4CA96B4A29E9E08000028031 /* AccountInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInformation.swift; sourceTree = "<group>"; };
+		4CA96B4C29E9F2BA00028031 /* EditNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNameViewController.swift; sourceTree = "<group>"; };
+		4CA96B4E29E9F2C900028031 /* EditEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmailViewController.swift; sourceTree = "<group>"; };
+		4CA96B5029E9F2DE00028031 /* EditPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordViewController.swift; sourceTree = "<group>"; };
 		4CAD06EC28F8A354009622F6 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		4CAD06EE28F8A40D009622F6 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		4CBB9C0929A5829100F272F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,6 +158,9 @@
 				4CAD06EC28F8A354009622F6 /* ProductDetailViewController.swift */,
 				4C0FF52228E8F2E30004F607 /* CartViewController.swift */,
 				4C9C4FB328E4E9D000649009 /* AccountViewController.swift */,
+				4CA96B4C29E9F2BA00028031 /* EditNameViewController.swift */,
+				4CA96B4E29E9F2C900028031 /* EditEmailViewController.swift */,
+				4CA96B5029E9F2DE00028031 /* EditPasswordViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -163,6 +178,7 @@
 			children = (
 				D39F9DBE28FB36B6005F0D46 /* Item.swift */,
 				214341572902EFA2007F278C /* Constants.swift */,
+				4CA96B4A29E9E08000028031 /* AccountInformation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,6 +191,8 @@
 				21BC477429E311DA00E5C4E8 /* ProductDetailSectionOneCell.swift */,
 				21BC477629E313D700E5C4E8 /* ProductDetailSectionTwoCell.swift */,
 				21BC477829E314A800E5C4E8 /* ProductDetailSectionThreeCell.swift */,
+				4CA96B4629E9B7DD00028031 /* ShopTableViewCell.swift */,
+				4CA96B4829E9D74100028031 /* AccountTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,10 +292,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C8ED04A290724A60020A8B7 /* SignUpViewController.swift in Sources */,
+				4CA96B4B29E9E08000028031 /* AccountInformation.swift in Sources */,
+				4CA96B4729E9B7DD00028031 /* ShopTableViewCell.swift in Sources */,
 				4C0FF52328E8F2E30004F607 /* CartViewController.swift in Sources */,
 				21BC477929E314A800E5C4E8 /* ProductDetailSectionThreeCell.swift in Sources */,
 				4C9C4FB228E4E9AC00649009 /* ShopViewController.swift in Sources */,
 				4CAD06EF28F8A40D009622F6 /* ProductCollectionViewCell.swift in Sources */,
+				4CA96B4D29E9F2BA00028031 /* EditNameViewController.swift in Sources */,
 				4C9C4FB428E4E9D000649009 /* AccountViewController.swift in Sources */,
 				21BC477C29E32A0E00E5C4E8 /* Configurable.swift in Sources */,
 				D39F9DBF28FB36B6005F0D46 /* Item.swift in Sources */,
@@ -285,11 +306,14 @@
 				214341582902EFA2007F278C /* Constants.swift in Sources */,
 				4CAD06ED28F8A354009622F6 /* ProductDetailViewController.swift in Sources */,
 				4C8ED04C290724BA0020A8B7 /* SignInViewController.swift in Sources */,
+				4CA96B4929E9D74100028031 /* AccountTableViewCell.swift in Sources */,
 				4C9C4FA128E4E78900649009 /* HomeViewController.swift in Sources */,
 				4C9DC8BA29CFA535006FC687 /* UIColor+Extensions.swift in Sources */,
+				4CA96B4F29E9F2C900028031 /* EditEmailViewController.swift in Sources */,
 				4C9C4F9D28E4E78900649009 /* AppDelegate.swift in Sources */,
 				21BC477729E313D700E5C4E8 /* ProductDetailSectionTwoCell.swift in Sources */,
 				21BC477529E311DA00E5C4E8 /* ProductDetailSectionOneCell.swift in Sources */,
+				4CA96B5129E9F2DE00028031 /* EditPasswordViewController.swift in Sources */,
 				4C9C4F9F28E4E78900649009 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
