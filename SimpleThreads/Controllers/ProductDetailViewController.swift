@@ -50,13 +50,13 @@ extension ProductDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Create cell upfront and then switch on the indexPath.row to determine which cell to display
-        guard let sectionOneCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.productionDetailSectionOne, for: indexPath) as? ProductDetailSectionOneCell else { return UITableViewCell() }
+        guard let sectionOneCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.productionDetailSectionOne, for: indexPath) as? Configureable else { return UITableViewCell() }
         guard let sectionTwoCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.productionDetailSectionTwo, for: indexPath) as? ProductDetailSectionTwoCell else { return UITableViewCell() }
         guard let sectionThreeCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.productionDetailSectionThree, for: indexPath) as? ProductDetailSectionThreeCell else { return UITableViewCell() }
         
             /*
              If we had used programmatic UI we could simply create a protocol that with set the cell
-             identifier by using String(describing: self) and called the configure method a single time
+             identifier by using String(describing: self) and call the configure method a single time
              by casting to a cell that conforms to the Configurable protocol rather than casting
              to the specific cell class.
              This is just a refactor opportunity later on to maintain DRY (Don't Repeat Yourself) code.

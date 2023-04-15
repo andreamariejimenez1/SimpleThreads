@@ -8,21 +8,30 @@
 import UIKit
 
 class ShopViewController: UIViewController {
-    
-    var shirtTitle = "Shirt"
+
+    @IBOutlet weak var categoryTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        categoryTableView.dataSource = self
+        
+    }
+}
+
+// MARK: - TableView Datasource
+extension ShopViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        Category.allCases.count
     }
     
-    @IBAction func didTapButton() {
-        let storyBoard = UIStoryboard(name: "Main", bundle: .main)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "Home")
-        vc.view.backgroundColor = .systemPink
-        vc.title = shirtTitle
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.categoryCell, for: indexPath) as? ShopTableViewCell else { return UITableViewCell() }
         
-        navigationController?.pushViewController(vc, animated: true)
+        let category = Category.allCases[indexPath.row]
+        
+        cell.configure(with: category)
+        return cell
     }
 
 }

@@ -22,7 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // let db = Firestore.firestore()
         
-        
+        // Change tab bar item colors
+        UITabBar.appearance().tintColor = .black
+        UITabBar.appearance().unselectedItemTintColor = .black.withAlphaComponent(0.5)
        
         
         return true
