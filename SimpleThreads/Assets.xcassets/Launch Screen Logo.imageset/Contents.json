@@ -1,17 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "S.png",
-      "idiom" : "universal"
-    },
-    {
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "dark"
-        }
-      ],
-      "filename" : "S copy.png",
+      "filename" : "Launch Screen.png",
       "idiom" : "universal"
     }
   ],

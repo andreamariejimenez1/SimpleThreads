@@ -54,7 +54,7 @@ extension AccountViewController: AccountTableViewCellDelegate {
     func didTapAction(_ cell: AccountTableViewCell, didSelectButtonAt indexPath: IndexPath?) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let indexPath else { return }
+        guard let indexPath = indexPath else { return }
         let accountCellIndex = indexPath.row
         
         switch accountCellIndex {
