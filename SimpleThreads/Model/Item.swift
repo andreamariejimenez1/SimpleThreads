@@ -4,7 +4,6 @@
 //
 //  Created by Ahmet Bilici on 10/15/22.
 //
-
 import UIKit
 
 enum Size: String {
@@ -24,7 +23,7 @@ enum Price: String {
     case socks = "$8.00"
 }
 
-enum Category: String, CaseIterable {
+enum Category: Int, CaseIterable {
     case all
     case unisexShirt
     case womensShirt
@@ -35,11 +34,24 @@ enum Category: String, CaseIterable {
     case socks
     
     func getTitle() -> String {
-        if #available(iOS 16.0, *) {
-            // IDK
-            return self.rawValue.split(separator: "Shirt").joined(separator: " ").capitalized
-        } else {
-            return "Upgrade iOS"
+
+        switch self {
+        case .all:
+            return "All"
+        case .unisexShirt:
+            return "Unisex Shirts"
+        case .womensShirt:
+            return "Womens Shirts"
+        case .mensShirt:
+            return "Mens Shirts"
+        case .sweatShirt:
+            return "Sweatshirts"
+        case .hoodie:
+            return "Hoodies"
+        case .totebag:
+            return "Tote Bags"
+        case .socks:
+            return "Socks"
         }
     }
 }

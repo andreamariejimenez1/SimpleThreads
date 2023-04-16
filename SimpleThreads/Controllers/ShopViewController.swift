@@ -28,9 +28,10 @@ extension ShopViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.categoryCell, for: indexPath) as? ShopTableViewCell else { return UITableViewCell() }
         
-        let category = Category.allCases[indexPath.row]
+        if let category = Category(rawValue: indexPath.row) {
+            cell.configure(with: category)
+        }
         
-        cell.configure(with: category)
         return cell
     }
 

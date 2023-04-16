@@ -13,6 +13,12 @@ class ShopTableViewCell: UITableViewCell, Configureable {
     
     @IBOutlet weak var productCategory: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.heightAnchor.constraint(equalToConstant: 67).isActive = true
+    }
+    
     func configure(with item: Item) {
         productCategory.text = item.category?.getTitle()
     }
