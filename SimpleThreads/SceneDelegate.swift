@@ -17,6 +17,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
+        FirebaseManager.shared.signOut()
+        
+        // If the user is already signed, take them to the home screen
+        if FirebaseManager.shared.userIsAuthenticated {
+            showHomeScreen()
+        }
+        
         // Add an observer to listen for a notification called "loggedIn"
         // When the notification center receieves this message it will perform the showHomeScreen function
         NotificationCenter.default.addObserver(forName: Notifications.showHome, object: nil, queue: .main) { notification in

@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "filename" : "launchscreenlogo-LIGHT.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "launchscreenlogo-DARK.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

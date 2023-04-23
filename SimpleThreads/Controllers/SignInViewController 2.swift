@@ -12,6 +12,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField! {
         didSet {
             emailTextField.configureTextField(withIcon: Icons.email, placeHolder: "Email")
+            print("Did set")
         }
     }
     @IBOutlet weak var passwordTextField: UITextField! {
@@ -22,26 +23,17 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        print("Did Load")
+        // Do any additional setup after loading the view.
     }
     
     @IBAction func logInTapped(_ sender: UIButton) {
-        guard let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
-           showInvalidInput()
-            return
-        }
         
-        FirebaseManager.shared.signInUser(email: email, password: password) { [weak self] authResult, error in
-            guard error == nil else {
-                guard let strongSelf = self else { return }
-                strongSelf.showInvalidInput()
-                return
-            }
-            
-            // Create a post the showHomeScreen notification to the apps notification center
-            // For now, this is better practice than using segues everywhere
-            NotificationCenter.default.post(name: Notifications.showHome, object: nil)
-        }
+        //TODO: Add logic to only post the notification when the users credentials has been verified
+        
+        // Create a post the showHomeScreen notification to the apps notification center
+        // For now, this is better practice than using segues everywhere
+        NotificationCenter.default.post(name: Notifications.showHome, object: nil)
     }
     
     // MARK: - Destination Segues and unwind Segues
@@ -53,8 +45,4 @@ class SignInViewController: UIViewController {
         }
     }
     
-    private func showInvalidInput() {
-        emailTextField.invalidText()
-        passwordTextField.invalidText()
-    }
 }

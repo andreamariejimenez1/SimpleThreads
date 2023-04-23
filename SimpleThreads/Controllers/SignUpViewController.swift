@@ -119,25 +119,3 @@ extension SignUpViewController: UITextFieldDelegate {
     
 }
 
-// MARK: - TextField Configurations
-
-extension UITextField {
-    
-    func setIcon(_ image: UIImage) {
-        let iconView = UIImageView(frame: CGRect(x: 10, y: 5, width: 20, height: 20))
-        iconView.image = image
-        let iconContainerView: UIView = UIView(frame: CGRect(x: 20, y: 0, width: 30, height: 30))
-        iconContainerView.addSubview(iconView)
-        leftView = iconContainerView
-        leftViewMode = .always
-    }
-    
-    func configureTextField(withIcon iconString: String, placeHolder text: String) {
-        self.tintColor = UIColor.black
-        self.setIcon(UIImage.init(systemName: "\(iconString)")!)
-        self.placeholder = "\(text)"
-        self.layer.borderWidth = 1.0
-        self.frame.size.height = 50
-        self.layer.cornerRadius = 12
-    }
-}
