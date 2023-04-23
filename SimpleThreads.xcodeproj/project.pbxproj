@@ -13,6 +13,11 @@
 		21BC477729E313D700E5C4E8 /* ProductDetailSectionTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC477629E313D700E5C4E8 /* ProductDetailSectionTwoCell.swift */; };
 		21BC477929E314A800E5C4E8 /* ProductDetailSectionThreeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC477829E314A800E5C4E8 /* ProductDetailSectionThreeCell.swift */; };
 		21BC477C29E32A0E00E5C4E8 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC477B29E32A0E00E5C4E8 /* Configurable.swift */; };
+		21BC477F29F4784A00E5C4E8 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC477E29F4784A00E5C4E8 /* FirebaseManager.swift */; };
+		21BC478129F4810B00E5C4E8 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC478029F4810B00E5C4E8 /* UITextField+Extensions.swift */; };
+		21BC478629F58E8800E5C4E8 /* whiteSpinner.json in Resources */ = {isa = PBXBuildFile; fileRef = 21BC478529F58E8800E5C4E8 /* whiteSpinner.json */; };
+		21BC478829F5918500E5C4E8 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC478729F5918500E5C4E8 /* LaunchScreenViewController.swift */; };
+		21BC478B29F592D800E5C4E8 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 21BC478A29F592D800E5C4E8 /* Lottie */; };
 		4C0FF52328E8F2E30004F607 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0FF52228E8F2E30004F607 /* CartViewController.swift */; };
 		4C60D0F8290848BC006B749A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4C60D0F7290848BC006B749A /* FirebaseAuth */; };
 		4C8ED04A290724A60020A8B7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8ED049290724A60020A8B7 /* SignUpViewController.swift */; };
@@ -52,6 +57,10 @@
 		21BC477629E313D700E5C4E8 /* ProductDetailSectionTwoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailSectionTwoCell.swift; sourceTree = "<group>"; };
 		21BC477829E314A800E5C4E8 /* ProductDetailSectionThreeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailSectionThreeCell.swift; sourceTree = "<group>"; };
 		21BC477B29E32A0E00E5C4E8 /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
+		21BC477E29F4784A00E5C4E8 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		21BC478029F4810B00E5C4E8 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		21BC478529F58E8800E5C4E8 /* whiteSpinner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = whiteSpinner.json; sourceTree = "<group>"; };
+		21BC478729F5918500E5C4E8 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		4C0FF52228E8F2E30004F607 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		4C8ED049290724A60020A8B7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		4C8ED04B290724BA0020A8B7 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +94,7 @@
 			files = (
 				4CAD06FE28F8AB39009622F6 /* FirebaseMessaging in Frameworks */,
 				4CAD06F428F8AB39009622F6 /* FirebaseAnalytics in Frameworks */,
+				21BC478B29F592D800E5C4E8 /* Lottie in Frameworks */,
 				4CAD06FC28F8AB39009622F6 /* FirebaseFunctions in Frameworks */,
 				4CAD070028F8AB39009622F6 /* FirebaseStorage in Frameworks */,
 				4CAD06F828F8AB39009622F6 /* FirebaseFirestore in Frameworks */,
@@ -103,6 +113,22 @@
 				21BC477B29E32A0E00E5C4E8 /* Configurable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		21BC477D29F4781100E5C4E8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				21BC477E29F4784A00E5C4E8 /* FirebaseManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		21BC478229F58D9D00E5C4E8 /* Lottie Animations */ = {
+			isa = PBXGroup;
+			children = (
+				21BC478529F58E8800E5C4E8 /* whiteSpinner.json */,
+			);
+			path = "Lottie Animations";
 			sourceTree = "<group>";
 		};
 		4C60D0F6290848BC006B749A /* Frameworks */ = {
@@ -132,6 +158,8 @@
 		4C9C4F9B28E4E78900649009 /* SimpleThreads */ = {
 			isa = PBXGroup;
 			children = (
+				21BC478229F58D9D00E5C4E8 /* Lottie Animations */,
+				21BC477D29F4781100E5C4E8 /* Managers */,
 				21BC477A29E329F000E5C4E8 /* Protocols */,
 				4C9DC8B829CFA4FA006FC687 /* Extensions */,
 				4CAD070128FB126C009622F6 /* Model */,
@@ -161,6 +189,7 @@
 				4CA96B4C29E9F2BA00028031 /* EditNameViewController.swift */,
 				4CA96B4E29E9F2C900028031 /* EditEmailViewController.swift */,
 				4CA96B5029E9F2DE00028031 /* EditPasswordViewController.swift */,
+				21BC478729F5918500E5C4E8 /* LaunchScreenViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -169,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				4C9DC8B929CFA535006FC687 /* UIColor+Extensions.swift */,
+				21BC478029F4810B00E5C4E8 /* UITextField+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -230,6 +260,7 @@
 				4CAD06FF28F8AB39009622F6 /* FirebaseStorage */,
 				4C60D0F7290848BC006B749A /* FirebaseAuth */,
 				4CB70E8A2926FD93003C655F /* FirebaseStorage */,
+				21BC478A29F592D800E5C4E8 /* Lottie */,
 			);
 			productName = SimpleThreads;
 			productReference = 4C9C4F9928E4E78900649009 /* SimpleThreads.app */;
@@ -262,6 +293,7 @@
 			packageReferences = (
 				4CAD06F228F8AB39009622F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				4CB70E892926FD93003C655F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				21BC478929F592D800E5C4E8 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			productRefGroup = 4C9C4F9A28E4E78900649009 /* Products */;
 			projectDirPath = "";
@@ -281,6 +313,7 @@
 				4CBB9C0A29A5829100F272F4 /* Main.storyboard in Resources */,
 				214341562902ED75007F278C /* GoogleService-Info.plist in Resources */,
 				4C9C4FA628E4E78C00649009 /* Assets.xcassets in Resources */,
+				21BC478629F58E8800E5C4E8 /* whiteSpinner.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +331,7 @@
 				21BC477929E314A800E5C4E8 /* ProductDetailSectionThreeCell.swift in Sources */,
 				4C9C4FB228E4E9AC00649009 /* ShopViewController.swift in Sources */,
 				4CAD06EF28F8A40D009622F6 /* ProductCollectionViewCell.swift in Sources */,
+				21BC478829F5918500E5C4E8 /* LaunchScreenViewController.swift in Sources */,
 				4CA96B4D29E9F2BA00028031 /* EditNameViewController.swift in Sources */,
 				4C9C4FB428E4E9D000649009 /* AccountViewController.swift in Sources */,
 				21BC477C29E32A0E00E5C4E8 /* Configurable.swift in Sources */,
@@ -306,8 +340,10 @@
 				214341582902EFA2007F278C /* Constants.swift in Sources */,
 				4CAD06ED28F8A354009622F6 /* ProductDetailViewController.swift in Sources */,
 				4C8ED04C290724BA0020A8B7 /* SignInViewController.swift in Sources */,
+				21BC478129F4810B00E5C4E8 /* UITextField+Extensions.swift in Sources */,
 				4CA96B4929E9D74100028031 /* AccountTableViewCell.swift in Sources */,
 				4C9C4FA128E4E78900649009 /* HomeViewController.swift in Sources */,
+				21BC477F29F4784A00E5C4E8 /* FirebaseManager.swift in Sources */,
 				4C9DC8BA29CFA535006FC687 /* UIColor+Extensions.swift in Sources */,
 				4CA96B4F29E9F2C900028031 /* EditEmailViewController.swift in Sources */,
 				4C9C4F9D28E4E78900649009 /* AppDelegate.swift in Sources */,
@@ -538,6 +574,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		21BC478929F592D800E5C4E8 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.3;
+			};
+		};
 		4CAD06F228F8AB39009622F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -557,6 +601,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		21BC478A29F592D800E5C4E8 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21BC478929F592D800E5C4E8 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
 		4C60D0F7290848BC006B749A /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4CAD06F228F8AB39009622F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

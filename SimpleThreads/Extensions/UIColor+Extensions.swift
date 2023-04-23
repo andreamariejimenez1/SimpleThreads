@@ -55,4 +55,8 @@ extension UIColor {
     
     static let appColor = UIColor(red: 118/255.0, green: 34/255.0, blue: 11/255.0, alpha: 1)
     
+    
+    enum AlertColors {
+        static let red = UIColor(red: 255/255, green: 105/255, blue: 105/255, alpha: 1)
+    }
 }
