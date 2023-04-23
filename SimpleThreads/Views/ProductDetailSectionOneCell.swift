@@ -34,7 +34,8 @@ class ProductDetailSectionOneCell: UITableViewCell, Configureable {
     }
     
     func configure(with item: Item) {
-        productImageView.image = item.image
+        guard let imageURL = URL(string: item.image) else { return }
+        productImageView.af.setImage(withURL: imageURL)
         productNameLabel.text = item.name
         priceLabel.text = item.price.rawValue
     }

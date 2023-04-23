@@ -18,6 +18,7 @@
 		21BC478629F58E8800E5C4E8 /* whiteSpinner.json in Resources */ = {isa = PBXBuildFile; fileRef = 21BC478529F58E8800E5C4E8 /* whiteSpinner.json */; };
 		21BC478829F5918500E5C4E8 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC478729F5918500E5C4E8 /* LaunchScreenViewController.swift */; };
 		21BC478B29F592D800E5C4E8 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 21BC478A29F592D800E5C4E8 /* Lottie */; };
+		21BC478E29F5E35800E5C4E8 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 21BC478D29F5E35800E5C4E8 /* AlamofireImage */; };
 		4C0FF52328E8F2E30004F607 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0FF52228E8F2E30004F607 /* CartViewController.swift */; };
 		4C60D0F8290848BC006B749A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4C60D0F7290848BC006B749A /* FirebaseAuth */; };
 		4C8ED04A290724A60020A8B7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8ED049290724A60020A8B7 /* SignUpViewController.swift */; };
@@ -99,6 +100,7 @@
 				4CAD070028F8AB39009622F6 /* FirebaseStorage in Frameworks */,
 				4CAD06F828F8AB39009622F6 /* FirebaseFirestore in Frameworks */,
 				4CB70E8B2926FD93003C655F /* FirebaseStorage in Frameworks */,
+				21BC478E29F5E35800E5C4E8 /* AlamofireImage in Frameworks */,
 				4C60D0F8290848BC006B749A /* FirebaseAuth in Frameworks */,
 				4CAD06FA28F8AB39009622F6 /* FirebaseFirestoreSwift in Frameworks */,
 			);
@@ -261,6 +263,7 @@
 				4C60D0F7290848BC006B749A /* FirebaseAuth */,
 				4CB70E8A2926FD93003C655F /* FirebaseStorage */,
 				21BC478A29F592D800E5C4E8 /* Lottie */,
+				21BC478D29F5E35800E5C4E8 /* AlamofireImage */,
 			);
 			productName = SimpleThreads;
 			productReference = 4C9C4F9928E4E78900649009 /* SimpleThreads.app */;
@@ -294,6 +297,7 @@
 				4CAD06F228F8AB39009622F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				4CB70E892926FD93003C655F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				21BC478929F592D800E5C4E8 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				21BC478C29F5E35800E5C4E8 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 			);
 			productRefGroup = 4C9C4F9A28E4E78900649009 /* Products */;
 			projectDirPath = "";
@@ -582,6 +586,14 @@
 				minimumVersion = 4.1.3;
 			};
 		};
+		21BC478C29F5E35800E5C4E8 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
 		4CAD06F228F8AB39009622F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -605,6 +617,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 21BC478929F592D800E5C4E8 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		21BC478D29F5E35800E5C4E8 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21BC478C29F5E35800E5C4E8 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
 		};
 		4C60D0F7290848BC006B749A /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
