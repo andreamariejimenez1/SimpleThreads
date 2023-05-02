@@ -25,6 +25,8 @@ struct CellIdentifiers {
     static let productionDetailSectionThree = "ProductDetailSectionThreeCell"
     static let accountTableViewCell = "accountCell"
     static let categoryCell = "categoryCell"
+    static let cartCell = "cartCell"
+    static let cartTotalsCell = "cartTotalsCell"
     
 }
 
@@ -39,7 +41,9 @@ struct ViewControllers {
     
     static let signIn = "signIn"
     static let signUp = "signUp"
+    static let welcomeVC = "WelcomeViewController"
     static let tabBar = "TabBarViewController"
+    static let cartVC = "cartVC"
 }
 
 struct Segues {
@@ -51,4 +55,5 @@ struct Segues {
 /// The notification names that will sent to NotificationCenter
 struct Notifications {
     static let showHome = Notification.Name("showHomeScreen")
+    static let showWelcome = Notification.Name("showWelcomeScreen")
 }
