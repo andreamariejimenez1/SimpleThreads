@@ -7,15 +7,38 @@
 
 import UIKit
 
+protocol ProductDetailViewControllerDelegate: AnyObject {
+    func didAddItemToBag()
+}
+
 class ProductDetailViewController: UIViewController {
     
     // This need to be set first before pushing onto navigation controller
     var item: Item? = nil
+    var cart: UIBarButtonItem?
+    weak var delegate: ProductDetailViewControllerDelegate?
 
     @IBOutlet weak var productDetailTableView: UITableView!
     
+    private let badge: UILabel = {
+        let badgeCount = UILabel()
+        badgeCount.translatesAutoresizingMaskIntoConstraints = false
+        badgeCount.layer.cornerRadius = badgeCount.frame.size.height / 2
+        badgeCount.textAlignment = .center
+        badgeCount.layer.masksToBounds = true
+        badgeCount.textColor = .white
+        badgeCount.font = badgeCount.font.withSize(12)
+        badgeCount.backgroundColor = .systemRed
+        badgeCount.text = String(DataStore.cart.items.count)
+        return badgeCount
+    }()
+    
     @IBAction func addToBagTapped(_ sender: UIButton) {
-        print("pressed")
+        DataStore.cart.items.append(item!)
+        let count = DataStore.cart.items.count
+        hideBadgeIfNeeded()
+        badge.text = String(count)
+        delegate?.didAddItemToBag()
     }
     
     override func viewDidLoad() {
@@ -27,15 +50,47 @@ class ProductDetailViewController: UIViewController {
         productDetailTableView.rowHeight = UITableView.automaticDimension
         productDetailTableView.allowsSelection = false
         configureNavigationBar()
+        configureBadge()
     }
     
     private func configureNavigationBar() {
+        let cartButton = UIButton(frame: CGRect(x: 0, y: 0, width: 58.67, height: 44))
+        cartButton.addTarget(self, action: #selector(showCart), for: .touchUpInside)
+        cartButton.configuration = .plain()
+        cartButton.configuration?.baseForegroundColor = .lightGray
         let imageConfig = UIImage.SymbolConfiguration(pointSize: 23)
         let cartImage = UIImage(systemName: "cart.circle.fill", withConfiguration: imageConfig)
-        let navItem = UIBarButtonItem(image: cartImage, style: .plain, target: nil, action: nil)
-        navItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.black,
-                                        NSAttributedString.Key.backgroundColor : UIColor.tertiaryLabel], for: .normal)
+        let tintedCart = cartImage?.withTintColor(.black)
+        cartButton.setImage(tintedCart, for: .normal)
+        let navItem = UIBarButtonItem(customView: cartButton)
         navigationItem.setRightBarButton(navItem, animated: true)
+        cart = navItem
+    }
+    
+    private func configureBadge() {
+        
+        cart?.customView?.addSubview(badge)
+        NSLayoutConstraint.activate([
+            badge.centerXAnchor.constraint(equalTo: cart!.customView!.rightAnchor, constant: -10),
+            badge.centerYAnchor.constraint(equalTo: cart!.customView!.topAnchor, constant: 10),
+            badge.widthAnchor.constraint(equalToConstant: 20),
+            badge.heightAnchor.constraint(equalToConstant: 20)
+        ])
+        
+        cart?.customView?.bringSubviewToFront(badge)
+        cart?.customView?.layoutIfNeeded()
+        badge.layer.cornerRadius = 20 / 2
+        hideBadgeIfNeeded()
+    }
+    
+    private func hideBadgeIfNeeded() {
+        badge.isHidden = DataStore.cart.items.count == 0
+    }
+    
+    @objc private func showCart() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let cartViewController = storyBoard.instantiateViewController(withIdentifier: ViewControllers.cartVC)
+        navigationController?.pushViewController(cartViewController, animated: true)
     }
 }
 

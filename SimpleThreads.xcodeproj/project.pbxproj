@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		210F39BE2A006A140059C6A9 /* CartProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210F39BD2A006A140059C6A9 /* CartProductsViewController.swift */; };
+		210F39C02A0150540059C6A9 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210F39BF2A0150540059C6A9 /* DataStore.swift */; };
+		210F39C22A0156DC0059C6A9 /* CartTotalsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210F39C12A0156DC0059C6A9 /* CartTotalsCell.swift */; };
 		214341562902ED75007F278C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 214341552902ED75007F278C /* GoogleService-Info.plist */; };
 		214341582902EFA2007F278C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214341572902EFA2007F278C /* Constants.swift */; };
 		21BC477529E311DA00E5C4E8 /* ProductDetailSectionOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC477429E311DA00E5C4E8 /* ProductDetailSectionOneCell.swift */; };
@@ -19,7 +22,11 @@
 		21BC478829F5918500E5C4E8 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC478729F5918500E5C4E8 /* LaunchScreenViewController.swift */; };
 		21BC478B29F592D800E5C4E8 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 21BC478A29F592D800E5C4E8 /* Lottie */; };
 		21BC478E29F5E35800E5C4E8 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 21BC478D29F5E35800E5C4E8 /* AlamofireImage */; };
-		4C0FF52328E8F2E30004F607 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0FF52228E8F2E30004F607 /* CartViewController.swift */; };
+		21BC479129FD979B00E5C4E8 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 21BC479029FD979B00E5C4E8 /* SkeletonView */; };
+		21BC479429FFEA2A00E5C4E8 /* ProductCollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC479329FFEA2A00E5C4E8 /* ProductCollectionsViewController.swift */; };
+		21BC479629FFF55300E5C4E8 /* CustomProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC479529FFF55300E5C4E8 /* CustomProductCollectionViewCell.swift */; };
+		21BC47982A00180800E5C4E8 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC47972A00180800E5C4E8 /* ImageLoader.swift */; };
+		21BC479A2A00665800E5C4E8 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC47992A00665800E5C4E8 /* CartCell.swift */; };
 		4C60D0F8290848BC006B749A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4C60D0F7290848BC006B749A /* FirebaseAuth */; };
 		4C8ED04A290724A60020A8B7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8ED049290724A60020A8B7 /* SignUpViewController.swift */; };
 		4C8ED04C290724BA0020A8B7 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8ED04B290724BA0020A8B7 /* SignInViewController.swift */; };
@@ -29,7 +36,7 @@
 		4C9C4FA128E4E78900649009 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C4FA028E4E78900649009 /* HomeViewController.swift */; };
 		4C9C4FA628E4E78C00649009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C9C4FA528E4E78C00649009 /* Assets.xcassets */; };
 		4C9C4FA928E4E78C00649009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9C4FA728E4E78C00649009 /* LaunchScreen.storyboard */; };
-		4C9C4FB228E4E9AC00649009 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C4FB128E4E9AC00649009 /* ShopViewController.swift */; };
+		4C9C4FB228E4E9AC00649009 /* CategorySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C4FB128E4E9AC00649009 /* CategorySelectionViewController.swift */; };
 		4C9C4FB428E4E9D000649009 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9C4FB328E4E9D000649009 /* AccountViewController.swift */; };
 		4C9DC8BA29CFA535006FC687 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9DC8B929CFA535006FC687 /* UIColor+Extensions.swift */; };
 		4CA96B4729E9B7DD00028031 /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA96B4629E9B7DD00028031 /* ShopTableViewCell.swift */; };
@@ -52,6 +59,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		210F39BD2A006A140059C6A9 /* CartProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartProductsViewController.swift; sourceTree = "<group>"; };
+		210F39BF2A0150540059C6A9 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		210F39C12A0156DC0059C6A9 /* CartTotalsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTotalsCell.swift; sourceTree = "<group>"; };
 		214341552902ED75007F278C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		214341572902EFA2007F278C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		21BC477429E311DA00E5C4E8 /* ProductDetailSectionOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailSectionOneCell.swift; sourceTree = "<group>"; };
@@ -62,7 +72,10 @@
 		21BC478029F4810B00E5C4E8 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		21BC478529F58E8800E5C4E8 /* whiteSpinner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = whiteSpinner.json; sourceTree = "<group>"; };
 		21BC478729F5918500E5C4E8 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
-		4C0FF52228E8F2E30004F607 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		21BC479329FFEA2A00E5C4E8 /* ProductCollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionsViewController.swift; sourceTree = "<group>"; };
+		21BC479529FFF55300E5C4E8 /* CustomProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		21BC47972A00180800E5C4E8 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		21BC47992A00665800E5C4E8 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		4C8ED049290724A60020A8B7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		4C8ED04B290724BA0020A8B7 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		4C8ED04D290732940020A8B7 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +86,7 @@
 		4C9C4FA528E4E78C00649009 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C9C4FA828E4E78C00649009 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C9C4FAA28E4E78C00649009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C9C4FB128E4E9AC00649009 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		4C9C4FB128E4E9AC00649009 /* CategorySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewController.swift; sourceTree = "<group>"; };
 		4C9C4FB328E4E9D000649009 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		4C9DC8B929CFA535006FC687 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		4CA96B4629E9B7DD00028031 /* ShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
@@ -93,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21BC479129FD979B00E5C4E8 /* SkeletonView in Frameworks */,
 				4CAD06FE28F8AB39009622F6 /* FirebaseMessaging in Frameworks */,
 				4CAD06F428F8AB39009622F6 /* FirebaseAnalytics in Frameworks */,
 				21BC478B29F592D800E5C4E8 /* Lottie in Frameworks */,
@@ -131,6 +145,22 @@
 				21BC478529F58E8800E5C4E8 /* whiteSpinner.json */,
 			);
 			path = "Lottie Animations";
+			sourceTree = "<group>";
+		};
+		21BC479229FFE8BB00E5C4E8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4CAD06EE28F8A40D009622F6 /* ProductCollectionViewCell.swift */,
+				21BC477429E311DA00E5C4E8 /* ProductDetailSectionOneCell.swift */,
+				21BC477629E313D700E5C4E8 /* ProductDetailSectionTwoCell.swift */,
+				21BC477829E314A800E5C4E8 /* ProductDetailSectionThreeCell.swift */,
+				4CA96B4629E9B7DD00028031 /* ShopTableViewCell.swift */,
+				4CA96B4829E9D74100028031 /* AccountTableViewCell.swift */,
+				21BC479529FFF55300E5C4E8 /* CustomProductCollectionViewCell.swift */,
+				21BC47992A00665800E5C4E8 /* CartCell.swift */,
+				210F39C12A0156DC0059C6A9 /* CartTotalsCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		4C60D0F6290848BC006B749A /* Frameworks */ = {
@@ -173,6 +203,7 @@
 				4C9C4FA728E4E78C00649009 /* LaunchScreen.storyboard */,
 				4CBE5B322902C5E600A6C98D /* Resources */,
 				4C9C4FAA28E4E78C00649009 /* Info.plist */,
+				21BC47972A00180800E5C4E8 /* ImageLoader.swift */,
 			);
 			path = SimpleThreads;
 			sourceTree = "<group>";
@@ -180,18 +211,19 @@
 		4C9C4FB028E4E94800649009 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				21BC478729F5918500E5C4E8 /* LaunchScreenViewController.swift */,
 				4C8ED04D290732940020A8B7 /* WelcomeViewController.swift */,
 				4C8ED049290724A60020A8B7 /* SignUpViewController.swift */,
 				4C8ED04B290724BA0020A8B7 /* SignInViewController.swift */,
 				4C9C4FA028E4E78900649009 /* HomeViewController.swift */,
-				4C9C4FB128E4E9AC00649009 /* ShopViewController.swift */,
+				4C9C4FB128E4E9AC00649009 /* CategorySelectionViewController.swift */,
 				4CAD06EC28F8A354009622F6 /* ProductDetailViewController.swift */,
-				4C0FF52228E8F2E30004F607 /* CartViewController.swift */,
 				4C9C4FB328E4E9D000649009 /* AccountViewController.swift */,
 				4CA96B4C29E9F2BA00028031 /* EditNameViewController.swift */,
 				4CA96B4E29E9F2C900028031 /* EditEmailViewController.swift */,
 				4CA96B5029E9F2DE00028031 /* EditPasswordViewController.swift */,
-				21BC478729F5918500E5C4E8 /* LaunchScreenViewController.swift */,
+				21BC479329FFEA2A00E5C4E8 /* ProductCollectionsViewController.swift */,
+				210F39BD2A006A140059C6A9 /* CartProductsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -211,6 +243,7 @@
 				D39F9DBE28FB36B6005F0D46 /* Item.swift */,
 				214341572902EFA2007F278C /* Constants.swift */,
 				4CA96B4A29E9E08000028031 /* AccountInformation.swift */,
+				210F39BF2A0150540059C6A9 /* DataStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,12 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				4CBB9C0829A5829100F272F4 /* Main.storyboard */,
-				4CAD06EE28F8A40D009622F6 /* ProductCollectionViewCell.swift */,
-				21BC477429E311DA00E5C4E8 /* ProductDetailSectionOneCell.swift */,
-				21BC477629E313D700E5C4E8 /* ProductDetailSectionTwoCell.swift */,
-				21BC477829E314A800E5C4E8 /* ProductDetailSectionThreeCell.swift */,
-				4CA96B4629E9B7DD00028031 /* ShopTableViewCell.swift */,
-				4CA96B4829E9D74100028031 /* AccountTableViewCell.swift */,
+				21BC479229FFE8BB00E5C4E8 /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,6 +292,7 @@
 				4CB70E8A2926FD93003C655F /* FirebaseStorage */,
 				21BC478A29F592D800E5C4E8 /* Lottie */,
 				21BC478D29F5E35800E5C4E8 /* AlamofireImage */,
+				21BC479029FD979B00E5C4E8 /* SkeletonView */,
 			);
 			productName = SimpleThreads;
 			productReference = 4C9C4F9928E4E78900649009 /* SimpleThreads.app */;
@@ -298,6 +327,7 @@
 				4CB70E892926FD93003C655F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				21BC478929F592D800E5C4E8 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				21BC478C29F5E35800E5C4E8 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+				21BC478F29FD979B00E5C4E8 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = 4C9C4F9A28E4E78900649009 /* Products */;
 			projectDirPath = "";
@@ -330,22 +360,28 @@
 			files = (
 				4C8ED04A290724A60020A8B7 /* SignUpViewController.swift in Sources */,
 				4CA96B4B29E9E08000028031 /* AccountInformation.swift in Sources */,
+				21BC47982A00180800E5C4E8 /* ImageLoader.swift in Sources */,
+				21BC479429FFEA2A00E5C4E8 /* ProductCollectionsViewController.swift in Sources */,
+				210F39BE2A006A140059C6A9 /* CartProductsViewController.swift in Sources */,
 				4CA96B4729E9B7DD00028031 /* ShopTableViewCell.swift in Sources */,
-				4C0FF52328E8F2E30004F607 /* CartViewController.swift in Sources */,
 				21BC477929E314A800E5C4E8 /* ProductDetailSectionThreeCell.swift in Sources */,
-				4C9C4FB228E4E9AC00649009 /* ShopViewController.swift in Sources */,
+				21BC479A2A00665800E5C4E8 /* CartCell.swift in Sources */,
+				4C9C4FB228E4E9AC00649009 /* CategorySelectionViewController.swift in Sources */,
 				4CAD06EF28F8A40D009622F6 /* ProductCollectionViewCell.swift in Sources */,
 				21BC478829F5918500E5C4E8 /* LaunchScreenViewController.swift in Sources */,
 				4CA96B4D29E9F2BA00028031 /* EditNameViewController.swift in Sources */,
 				4C9C4FB428E4E9D000649009 /* AccountViewController.swift in Sources */,
 				21BC477C29E32A0E00E5C4E8 /* Configurable.swift in Sources */,
 				D39F9DBF28FB36B6005F0D46 /* Item.swift in Sources */,
+				21BC479629FFF55300E5C4E8 /* CustomProductCollectionViewCell.swift in Sources */,
 				4C8ED04E290732940020A8B7 /* WelcomeViewController.swift in Sources */,
+				210F39C02A0150540059C6A9 /* DataStore.swift in Sources */,
 				214341582902EFA2007F278C /* Constants.swift in Sources */,
 				4CAD06ED28F8A354009622F6 /* ProductDetailViewController.swift in Sources */,
 				4C8ED04C290724BA0020A8B7 /* SignInViewController.swift in Sources */,
 				21BC478129F4810B00E5C4E8 /* UITextField+Extensions.swift in Sources */,
 				4CA96B4929E9D74100028031 /* AccountTableViewCell.swift in Sources */,
+				210F39C22A0156DC0059C6A9 /* CartTotalsCell.swift in Sources */,
 				4C9C4FA128E4E78900649009 /* HomeViewController.swift in Sources */,
 				21BC477F29F4784A00E5C4E8 /* FirebaseManager.swift in Sources */,
 				4C9DC8BA29CFA535006FC687 /* UIColor+Extensions.swift in Sources */,
@@ -594,6 +630,14 @@
 				minimumVersion = 4.2.0;
 			};
 		};
+		21BC478F29FD979B00E5C4E8 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
 		4CAD06F228F8AB39009622F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -622,6 +666,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 21BC478C29F5E35800E5C4E8 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
 			productName = AlamofireImage;
+		};
+		21BC479029FD979B00E5C4E8 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21BC478F29FD979B00E5C4E8 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
 		};
 		4C60D0F7290848BC006B749A /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;

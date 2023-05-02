@@ -31,15 +31,13 @@ class LaunchScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureLoadingAnimationConstraints()
-        configureExpandingCircleView()
-        loadingSpinner.play()
-        animateCircle()
-        
-        // Hard coding the timing to make it easier
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.25) {
-            NotificationCenter.default.post(name: Notifications.showHome, object: nil)
+        Task {
+            await downloadImagesOnFirstLaunch()
+            configureExpandingCircleView()
+            animateCircle()
         }
+        configureLoadingAnimationConstraints()
+        loadingSpinner.play()
     }
     
     private func configureLoadingAnimationConstraints() {
@@ -70,11 +68,32 @@ class LaunchScreenViewController: UIViewController {
     
     private func animateCircle() {
         let expansionMultiplier = self.view.frame.size.height * 2
-        UIView.animate(withDuration: 0.5, delay: 3) {
+        UIView.animate(withDuration: 0.3) {
             self.height.constant = expansionMultiplier
             self.width.constant = expansionMultiplier
             self.expandingCircleView.layer.cornerRadius = expansionMultiplier / 2
             self.expandingCircleView.layoutIfNeeded()
+        } completion: { _ in
+            // When the animation is completed show the home controller
+            // If the user is already signed, take them to the home screen
+            if FirebaseManager.shared.userIsAuthenticated {
+                NotificationCenter.default.post(name: Notifications.showHome, object: nil)
+            } else {
+                NotificationCenter.default.post(name: Notifications.showWelcome, object: nil)
+            }
+        }
+    }
+
+    private func downloadImagesOnFirstLaunch() async {
+        // Since were just loading these images into memory, we don't need to assign it
+        // to anything
+        let _ = await withThrowingTaskGroup(of: UIImage.self) { taskGroup in
+            let urls = DataStore.items.lazy.map { $0.image }
+            for url in urls {
+                taskGroup.addTask {
+                    try await ImageLoader.shared.fetchImage(from: url)
+                }
+            }
         }
     }
 }

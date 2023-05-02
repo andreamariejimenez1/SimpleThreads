@@ -34,9 +34,12 @@ class ProductDetailSectionOneCell: UITableViewCell, Configureable {
     }
     
     func configure(with item: Item) {
-        guard let imageURL = URL(string: item.image) else { return }
-        productImageView.af.setImage(withURL: imageURL)
-        productNameLabel.text = item.name
-        priceLabel.text = item.price.rawValue
+        Task {
+            let image = try? await ImageLoader.shared.fetchImage(from: item.image)
+            productImageView.image = image
+            productNameLabel.text = item.name
+            productNameLabel.text = item.name
+            priceLabel.text = NumberFormatter.localizedString(from: item.price.rawValue as NSNumber, number: .currency)
+        }
     }
 }
