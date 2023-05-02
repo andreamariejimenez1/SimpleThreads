@@ -17,6 +17,7 @@ class CartProductsViewController: UIViewController {
 
         cartTableView.dataSource = self
         cartTableView.delegate = self
+        cartTableView.separatorStyle = .none
     }
 }
 

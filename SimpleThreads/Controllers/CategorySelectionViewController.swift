@@ -10,12 +10,22 @@ import UIKit
 class CategorySelectionViewController: UIViewController {
 
     @IBOutlet weak var categoryTableView: UITableView!
+    
+    lazy var searchController: UISearchController  = {
+        let searchController = UISearchController(searchResultsController: SearchTableViewController())
+        searchController.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Search SimpleThreads"
+        return searchController
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         categoryTableView.dataSource = self
         categoryTableView.delegate = self
+        navigationItem.searchController = searchController
+        UISearchBar.appearance().tintColor = .black
     }
 }
 
@@ -57,4 +67,16 @@ extension CategorySelectionViewController: UITableViewDelegate {
             navigationController?.pushViewController(collectionViewController, animated: true)
         }
     }
+}
+
+extension CategorySelectionViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else { return }
+        guard let searchTableView = searchController.searchResultsController as? SearchTableViewController else { return }
+        searchTableView.searchText = text
+    }
+}
+
+extension CategorySelectionViewController: UISearchControllerDelegate {
+    
 }

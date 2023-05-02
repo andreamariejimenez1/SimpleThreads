@@ -740,6 +740,7 @@
                                                                 <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                             </buttonConfiguration>
                                                             <connections>
+                                                                <action selector="didTapCheckout:" destination="HKU-BA-9bh" eventType="touchUpInside" id="FgG-gZ-wBJ"/>
                                                                 <action selector="logInTapped:" destination="U6c-cW-sfy" eventType="touchUpInside" id="kxn-k2-3kV"/>
                                                                 <segue destination="loW-NP-fc1" kind="presentation" id="Iv1-Cn-C3l"/>
                                                             </connections>
@@ -749,6 +750,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="checkOutButton" destination="HFR-iO-P0T" id="LSS-vc-86K"/>
                                             <outlet property="shipping" destination="2RZ-GM-4bR" id="3Lu-I8-rVt"/>
                                             <outlet property="subTotal" destination="Ccn-7K-zfR" id="vjn-wP-cx5"/>
                                             <outlet property="tax" destination="0f0-TE-tXt" id="Uhq-Le-dG8"/>
