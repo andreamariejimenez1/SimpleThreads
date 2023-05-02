@@ -58,10 +58,12 @@ class ProductDetailViewController: UIViewController {
         cartButton.addTarget(self, action: #selector(showCart), for: .touchUpInside)
         cartButton.configuration = .plain()
         cartButton.configuration?.baseForegroundColor = .lightGray
-        let imageConfig = UIImage.SymbolConfiguration(pointSize: 23)
-        let cartImage = UIImage(systemName: "cart.circle.fill", withConfiguration: imageConfig)
-        let tintedCart = cartImage?.withTintColor(.black)
-        cartButton.setImage(tintedCart, for: .normal)
+        cartButton.imageView?.tintColor = .black
+        let imageConfig = UIImage.SymbolConfiguration(hierarchicalColor: .black)
+        let sizeConfig = UIImage.SymbolConfiguration(pointSize: 23)
+        let combinedConfig = imageConfig.applying(sizeConfig)
+        let cartImage = UIImage(systemName: "cart.circle.fill", withConfiguration: combinedConfig)
+        cartButton.setImage(cartImage, for: .normal)
         let navItem = UIBarButtonItem(customView: cartButton)
         navigationItem.setRightBarButton(navItem, animated: true)
         cart = navItem
