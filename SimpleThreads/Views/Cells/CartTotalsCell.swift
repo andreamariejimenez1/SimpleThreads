@@ -30,5 +30,7 @@ class CartTotalsCell: UITableViewCell {
     func configure(with cart: Cart) {
         subTotal.text = cart.subTotal
         total.text = cart.total
+        tax.text = cart.taxTotal
+        shipping.text = cart.shippingCost
     }
 }

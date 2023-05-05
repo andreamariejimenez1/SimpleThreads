@@ -11,9 +11,20 @@ class HomeViewController: UIViewController {
     
     // MARK: - Variables
     var retrievedImages = [UIImage]()
+    var featuredItems = [Item]()
+    
+    let pressedDownTransform =  CGAffineTransform.identity.scaledBy(x: 0.95, y: 0.95)
+    var currentIndexPath: IndexPath?
     
     @IBOutlet weak var featuredCollectionView: UICollectionView!
     @IBOutlet weak var shoppingCartButton: UIButton!
+    
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = .appColor
+        refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+        return refreshControl
+    }()
 
     private let badge: UILabel = {
         let badgeCount = UILabel()
@@ -34,11 +45,74 @@ class HomeViewController: UIViewController {
         
         featuredCollectionView.dataSource = self
         featuredCollectionView.delegate = self
+        featuredCollectionView.refreshControl = refreshControl
+        setupLongPress()
         configureBadge()
+        configureBackButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         reconfigureBadge()
+    }
+    
+    private func setupLongPress() {
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(shrink))
+        longPress.minimumPressDuration = 0.05
+        longPress.cancelsTouchesInView = false
+        longPress.delegate = self
+        featuredCollectionView.addGestureRecognizer(longPress)
+    }
+    
+    @objc private func didPullToRefresh() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.featuredItems.removeAll()
+            self.featuredCollectionView.reloadData()
+            self.featuredCollectionView.refreshControl?.endRefreshing()
+        }
+    }
+    
+    @objc private func shrink(sender: UILongPressGestureRecognizer) {
+        
+        let point = sender.location(in: featuredCollectionView)
+        let indexPath = featuredCollectionView.indexPathForItem(at: point)
+        
+        if sender.state == .began, let indexPath = indexPath, let cell = featuredCollectionView.cellForItem(at: indexPath) as? ProductCollectionViewCell {
+            cell.highlightedView.isHidden = false
+            animate(cell, to: pressedDownTransform)
+            self.currentIndexPath = indexPath
+        } else if sender.state == .changed {
+            if indexPath != self.currentIndexPath, let currentIndexPath = self.currentIndexPath, let cell = featuredCollectionView.cellForItem(at: currentIndexPath) as? ProductCollectionViewCell {
+                cell.highlightedView.isHidden = true
+                if cell.transform != .identity {
+                    animate(cell, to: .identity)
+                }
+            } else if indexPath == self.currentIndexPath, let indexPath = indexPath, let cell = featuredCollectionView.cellForItem(at: indexPath) {
+                if cell.transform != pressedDownTransform {
+                    animate(cell, to: pressedDownTransform)
+                }
+            }
+        } else if let currentIndexPath = currentIndexPath, let cell = featuredCollectionView.cellForItem(at: currentIndexPath) as? ProductCollectionViewCell {
+            cell.highlightedView.isHidden = true
+            animate(cell, to: .identity)
+            self.currentIndexPath = nil
+        }
+    }
+    
+    private func animate(_ cell: UICollectionViewCell, to transform: CGAffineTransform) {
+        UIView.animate(withDuration: 0.4,
+                        delay: 0,
+                        usingSpringWithDamping: 0.8,
+                       initialSpringVelocity: 0.5,
+                        options: [.curveEaseInOut],
+                        animations: {
+                        cell.transform = transform
+            }, completion: nil)
+    }
+    
+    private func configureBackButton() {
+        let backItem = UIBarButtonItem()
+        backItem.tintColor = .black
+        navigationItem.backBarButtonItem = backItem
     }
     
     private func configureBadge() {
@@ -81,35 +155,17 @@ class HomeViewController: UIViewController {
 
 
 // MARK: - UICollectionView Datasource
-extension HomeViewController: SkeletonCollectionViewDataSource {
-    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> SkeletonView.ReusableCellIdentifier {
-        return "cell"
-    }
+extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return DataStore.items.count
+        return 8
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.collectionView , for: indexPath) as? ProductCollectionViewCell else { return UICollectionViewCell() }
         
-        let item = DataStore.items[indexPath.item]
-        Task {
-            await collectionCell.configure(with: item)
-        }
-        return collectionCell
-    }
-    
-    
-    func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return DataStore.items.count
-    }
-    
-    func collectionSkeletonView(_ skeletonView: UICollectionView, skeletonCellForItemAt indexPath: IndexPath) -> UICollectionViewCell? {
-        guard let collectionCell = skeletonView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.collectionView , for: indexPath) as? ProductCollectionViewCell else { return UICollectionViewCell() }
-        
-        let item = DataStore.items[indexPath.item]
-        
+        let item = DataStore.items.shuffled()[indexPath.item]
+        featuredItems.append(item)
         Task {
             await collectionCell.configure(with: item)
         }
@@ -128,6 +184,7 @@ extension HomeViewController: SkeletonCollectionViewDataSource {
     }
 }
 
+// MARK: - Prefetching
 extension HomeViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         
@@ -139,12 +196,19 @@ extension HomeViewController: UICollectionViewDataSourcePrefetching {
 extension HomeViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let product = DataStore.items[indexPath.item]
+        let product = featuredItems[indexPath.row]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let productDetailViewController = storyboard.instantiateViewController(withIdentifier: "ProductDetailViewController") as? ProductDetailViewController else { return }
         productDetailViewController.item = product
         productDetailViewController.delegate = self
         navigationController?.pushViewController(productDetailViewController, animated: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        UIView.animate(withDuration: 0.1) {
+            cell?.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        }
     }
 }
 
@@ -152,6 +216,13 @@ extension HomeViewController: UICollectionViewDelegate {
 extension HomeViewController: ProductDetailViewControllerDelegate {
     func didAddItemToBag() {
         reconfigureBadge()
+    }
+}
+
+extension HomeViewController: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }
 

@@ -69,13 +69,13 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="0.0" id="MQT-oN-eCY">
                                     <size key="itemSize" width="195" height="240"/>
-                                    <size key="headerReferenceSize" width="430" height="270"/>
+                                    <size key="headerReferenceSize" width="430" height="324"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="20" maxX="10" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="edi-d9-goZ" customClass="ProductCollectionViewCell" customModule="SimpleThreads" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="290" width="200" height="240"/>
+                                        <rect key="frame" x="10" y="344" width="200" height="240"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QLo-Pi-18W">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="240"/>
@@ -93,7 +93,7 @@
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKn-mG-zEP">
                                                             <rect key="frame" x="0.0" y="200" width="200" height="40"/>
-                                                            <color key="backgroundColor" red="0.84872625310000005" green="0.85156181559999999" blue="0.86078917980000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="hFx-LK-aSH"/>
@@ -132,13 +132,20 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="featuredHeader" id="O8k-f5-FLo">
-                                    <rect key="frame" x="0.0" y="0.0" width="430" height="270"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="430" height="324"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Featured header image" translatesAutoresizingMaskIntoConstraints="NO" id="Fn7-gl-OH4">
                                             <rect key="frame" x="0.0" y="0.0" width="430" height="270"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Featured For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4H-Gb-W7J">
+                                            <rect key="frame" x="14" y="294" width="367" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </collectionReusableView>
                             </collectionView>
@@ -305,6 +312,9 @@
                                         </imageReference>
                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="23"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="didSelectCart:" destination="qoC-8Z-iX8" eventType="touchUpInside" id="7gc-bs-p0t"/>
+                                    </connections>
                                 </button>
                             </barButtonItem>
                             <barButtonItem title="Item" style="plain" id="JFm-7g-1Sp">
@@ -322,6 +332,9 @@
                                         </imageReference>
                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="23"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="didSelectSearch:" destination="qoC-8Z-iX8" eventType="touchUpInside" id="rHY-Ag-LDI"/>
+                                    </connections>
                                 </button>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -329,6 +342,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="categoryTableView" destination="AEj-aj-gfT" id="19G-qZ-n06"/>
+                        <outlet property="shoppingCartButton" destination="NbL-dt-kOZ" id="8sr-ai-2aE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ry9-n6-Mzt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -442,7 +456,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EDIT NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDO-7N-mi1">
-                                <rect key="frame" x="71" y="87" width="286.33333333333331" height="30"/>
+                                <rect key="frame" x="71" y="87" width="286.33333333333337" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -579,12 +593,28 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SkK-IX-aTW">
+                                                    <rect key="frame" x="191" y="64" width="207" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TqJ-oL-BLp">
+                                                    <rect key="frame" x="200" y="36" width="204" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="colorLabel" destination="TqJ-oL-BLp" id="mLZ-r0-rf1"/>
                                             <outlet property="productImage" destination="iwm-fN-Ovk" id="EIR-Ly-g0K"/>
                                             <outlet property="productNameLabel" destination="Z6c-59-pOB" id="kB7-gQ-zGA"/>
                                             <outlet property="productPrice" destination="mHR-wG-Fx8" id="9qQ-0d-XN5"/>
+                                            <outlet property="sizeLabel" destination="SkK-IX-aTW" id="8GC-ov-ZR3"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cartTotalsCell" rowHeight="200" id="HKU-BA-9bh" customClass="CartTotalsCell" customModule="SimpleThreads" customModuleProvider="target">
@@ -769,7 +799,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fU7-j3-2DV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-400" y="1989"/>
+            <point key="canvasLocation" x="-400.93457943925233" y="1988.5529157667388"/>
         </scene>
         <!--PlaceOrderViewController-->
         <scene sceneID="2G9-Ca-sh5">
@@ -815,7 +845,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahE-Rb-Bfq">
-                                <rect key="frame" x="325" y="40" width="83" height="34"/>
+                                <rect key="frame" x="286" y="40" width="122" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" name="AppColor"/>
                                 <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="Edit" subtitle="" imagePadding="8" titleAlignment="automatic">
@@ -872,14 +902,14 @@
                                 <rect key="frame" x="21" y="521" width="64" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$120.00 USD" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6W-Vu-aAX">
                                 <rect key="frame" x="286" y="510" width="122" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <color key="textColor" name="AppColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjH-5o-ggX">
@@ -902,7 +932,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCT-ac-yK4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-400" y="2703"/>
+            <point key="canvasLocation" x="-400.93457943925233" y="2702.5917926565876"/>
         </scene>
         <!--ConfirmationViewController-->
         <scene sceneID="PMb-Io-s5K">

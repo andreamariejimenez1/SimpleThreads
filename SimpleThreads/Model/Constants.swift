@@ -57,3 +57,8 @@ struct Notifications {
     static let showHome = Notification.Name("showHomeScreen")
     static let showWelcome = Notification.Name("showWelcomeScreen")
 }
+
+enum Constants {
+    static let emptyCart = "You haven't added any items to your cart yet."
+    static let keepLooking = "Keep Looking"
+}
