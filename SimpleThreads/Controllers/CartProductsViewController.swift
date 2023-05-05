@@ -61,7 +61,7 @@ extension CartProductsViewController: EmptyCartViewDelegate {
     // When the user selects the keep looking button we will return to the shop page
     // and unhide the tabBar
     func didSelectKeepLooking(_ emptyCartView: EmptyCartView) {
-        guard let tabBarController else { return }
+        guard let tabBarController = tabBarController else { return }
         if tabBarController.selectedIndex == 1 {
             navigationController?.popViewController(animated: true)
         } else {
