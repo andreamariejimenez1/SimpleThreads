@@ -73,7 +73,6 @@ class CategorySelectionViewController: UIViewController {
     }
     
     @IBAction func didSelectSearch(_ sender: UIButton) {
-        print("tapped")
         searchController.searchBar.becomeFirstResponder()
     }
     
