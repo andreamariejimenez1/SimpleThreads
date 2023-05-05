@@ -62,24 +62,34 @@ extension AccountViewController: AccountTableViewCellDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let indexPath = indexPath else { return }
-        let accountCellIndex = indexPath.row
+        let accountCellIndex = indexPath
         
-        switch accountCellIndex {
-        case 0:
+        switch (accountCellIndex.section,accountCellIndex.row) {
+        case (0,0):
             print("The following cell was selected/tapped -> \(accountCellIndex)")
             
             guard let editNameViewController = storyboard.instantiateViewController(withIdentifier: "EditNameViewController") as? EditNameViewController else { return }
+            editNameViewController.delegate = self
+            editNameViewController.indexPath = accountCellIndex
             navigationController?.pushViewController(editNameViewController, animated: true)
-        case 1:
+        case (0,1):
             print("The following cell was selected/tapped -> \(accountCellIndex)")
             guard let editEmailViewController = storyboard.instantiateViewController(withIdentifier: "EditEmailViewController") as? EditEmailViewController else { return }
             navigationController?.pushViewController(editEmailViewController, animated: true)
-        case 2:
+        case (0,2):
             print("The following cell was selected/tapped -> \(accountCellIndex)")
             guard let editPasswordViewController = storyboard.instantiateViewController(withIdentifier: "EditPasswordViewController") as? EditPasswordViewController else { return }
             navigationController?.pushViewController(editPasswordViewController, animated: true)
         default:
-            print("Error? ")
+            print("Error?")
         }
+    }
+}
+
+extension AccountViewController: EditNameViewControllerDelegate {
+    func didTapSaveButton(firstName: String, lastName: String, indexPath: IndexPath?) {
+        print(firstName, lastName)
+        AccountInformation.accountSampleData[0].data = firstName.capitalized + " " + lastName.capitalized
+        accountTableView.reconfigureRows(at: [indexPath!])
     }
 }

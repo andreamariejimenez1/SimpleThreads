@@ -7,10 +7,14 @@
 
 import UIKit
 
+protocol EditNameViewControllerDelegate {
+    func didTapSaveButton(firstName: String, lastName: String, indexPath: IndexPath?)
+}
+
 class EditNameViewController: UIViewController {
     
-    var firstName: String?
-    var lastName: String?
+    var delegate: EditNameViewControllerDelegate?
+    var indexPath: IndexPath?
     
     @IBOutlet weak var firstNameTextField: UITextField! {
         didSet {
@@ -40,19 +44,17 @@ class EditNameViewController: UIViewController {
         firstNameTextField.becomeFirstResponder()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func saveButtonTapped(_ sender: UIButton) {
+        guard let firstName = firstNameTextField.text, firstName != "" else { return }
+        guard let lastName = lastNameTextField.text, lastName != "" else { return }
+        delegate?.didTapSaveButton(firstName: firstName, lastName: lastName, indexPath: indexPath)
+        
+        navigationController?.popViewController(animated: true)
     }
-    */
-
 }
 
 extension EditNameViewController: UITextFieldDelegate {
-    
+    // when user tap saves we need to get the text in the box and set it equal to the variable
+    // then we pass that variable to account
+    //
 }

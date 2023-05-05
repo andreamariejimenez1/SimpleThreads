@@ -482,6 +482,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="logInTapped:" destination="U6c-cW-sfy" eventType="touchUpInside" id="MSz-Yb-kMa"/>
+                                    <action selector="saveButtonTapped:" destination="tEk-ZO-M4S" eventType="touchUpInside" id="KNF-f1-h2z"/>
                                 </connections>
                             </button>
                         </subviews>
