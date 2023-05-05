@@ -10,15 +10,29 @@ import Foundation
 
 class Cart {
     var items = [Item]()
-    var tax = 0
+    var tax = 0.0725
+    var shipping = 5
+    
+    var priceOfItems: Double {
+        return items.lazy.map { $0.price.rawValue }.reduce(0) { $0 + $1 }
+    }
     
     var subTotal: String {
-        let price = items.map { $0.price.rawValue }.reduce(0) { $0 + $1 }
-        return NumberFormatter.localizedString(from: price as NSNumber, number: .currency)
+        NumberFormatter.localizedString(from: priceOfItems as NSNumber, number: .currency)
     }
+    
+    var taxTotal: String {
+        let taxInUSD = priceOfItems * tax
+        return NumberFormatter.localizedString(from: taxInUSD as NSNumber, number: .currency)
+    }
+    
+    var shippingCost: String {
+        NumberFormatter.localizedString(from: shipping as NSNumber, number: .currency)
+    }
+    
     var total: String {
-        let price = items.map { $0.price.rawValue }.reduce(0) { $0 + $1 }
-        return NumberFormatter.localizedString(from: price as NSNumber, number: .currency)
+        let total = (priceOfItems * tax) + priceOfItems
+        return NumberFormatter.localizedString(from: total as NSNumber, number: .currency)
     }
 }
 

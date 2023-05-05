@@ -50,6 +50,7 @@ class ProductDetailViewController: UIViewController {
         productDetailTableView.rowHeight = UITableView.automaticDimension
         productDetailTableView.allowsSelection = false
         configureNavigationBar()
+        configureBackButton()
         configureBadge()
     }
     
@@ -67,6 +68,12 @@ class ProductDetailViewController: UIViewController {
         let navItem = UIBarButtonItem(customView: cartButton)
         navigationItem.setRightBarButton(navItem, animated: true)
         cart = navItem
+    }
+    
+    private func configureBackButton() {
+        let backItem = UIBarButtonItem()
+        backItem.tintColor = .black
+        navigationItem.backBarButtonItem = backItem
     }
     
     private func configureBadge() {

@@ -41,6 +41,14 @@ class ProductCollectionsViewController: UIViewController {
         configureHierarchy()
         configureDataSource()
         applyInitialSnapshot()
+        configureBackButton()
+    }
+    
+    // Turn back button black when pushing other view controller onto navigation stack
+    private func configureBackButton() {
+        let backItem = UIBarButtonItem()
+        backItem.tintColor = .black
+        navigationItem.backBarButtonItem = backItem
     }
 }
 
@@ -93,10 +101,10 @@ extension ProductCollectionsViewController {
         
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.3))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-//        group.interItemSpacing = .fixed(spacing)
         
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = spacing

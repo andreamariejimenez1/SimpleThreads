@@ -16,7 +16,6 @@ class CustomProductCollectionViewCell: UICollectionViewCell {
         let image = UIImage()
         let imageView = UIImageView(image: image)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.isSkeletonable = true
         return imageView
     }()
     
@@ -25,7 +24,7 @@ class CustomProductCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        startAnimatingCell()
+        configureUI()
         installConstraints()
     }
     
@@ -33,8 +32,15 @@ class CustomProductCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func startAnimatingCell() {
-//        productImageView.showAnimatedGradientSkeleton()
+    private func configureUI() {
+        contentView.layer.cornerRadius = 10
+        contentView.layer.masksToBounds = true
+        layer.cornerRadius = 10
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 3)
+        layer.shadowRadius = 10.0
+        layer.shadowOpacity = 0.2
     }
     
     func configureCell(with url: String) async {

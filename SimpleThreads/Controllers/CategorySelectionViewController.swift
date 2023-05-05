@@ -10,6 +10,7 @@ import UIKit
 class CategorySelectionViewController: UIViewController {
 
     @IBOutlet weak var categoryTableView: UITableView!
+    @IBOutlet weak var shoppingCartButton: UIButton!
     
     lazy var searchController: UISearchController  = {
         let searchController = UISearchController(searchResultsController: SearchTableViewController())
@@ -18,7 +19,20 @@ class CategorySelectionViewController: UIViewController {
         searchController.searchBar.placeholder = "Search SimpleThreads"
         return searchController
     }()
-
+    
+    private let badge: UILabel = {
+        let badgeCount = UILabel()
+        badgeCount.translatesAutoresizingMaskIntoConstraints = false
+        badgeCount.layer.cornerRadius = badgeCount.frame.size.height / 2
+        badgeCount.textAlignment = .center
+        badgeCount.layer.masksToBounds = true
+        badgeCount.textColor = .white
+        badgeCount.font = badgeCount.font.withSize(12)
+        badgeCount.backgroundColor = .systemRed
+        badgeCount.text = String(DataStore.cart.items.count)
+        return badgeCount
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,7 +40,50 @@ class CategorySelectionViewController: UIViewController {
         categoryTableView.delegate = self
         navigationItem.searchController = searchController
         UISearchBar.appearance().tintColor = .black
+        configureBackButton()
+        configureBadge()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        configureBadge()
+    }
+    
+    private func configureBackButton() {
+        let backItem = UIBarButtonItem()
+        backItem.tintColor = .black
+        navigationItem.backBarButtonItem = backItem
+    }
+    
+    private func configureBadge() {
+        shoppingCartButton.addSubview(badge)
+        shoppingCartButton.bringSubviewToFront(badge)
+        
+        NSLayoutConstraint.activate([
+            badge.centerXAnchor.constraint(equalTo: shoppingCartButton.rightAnchor, constant: -10),
+            badge.centerYAnchor.constraint(equalTo: shoppingCartButton.topAnchor, constant: 10),
+            badge.widthAnchor.constraint(equalToConstant: 20),
+            badge.heightAnchor.constraint(equalToConstant: 20)
+        ])
+        badge.layer.cornerRadius = 20 / 2
+        hideBadgeIfNeeded()
+    }
+    
+    private func hideBadgeIfNeeded() {
+        badge.isHidden = DataStore.cart.items.count == 0
+    }
+    
+    @IBAction func didSelectSearch(_ sender: UIButton) {
+        print("tapped")
+        searchController.searchBar.becomeFirstResponder()
+    }
+    
+    @IBAction func didSelectCart(_ sender: UIButton) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let cartViewController = storyBoard.instantiateViewController(withIdentifier: ViewControllers.cartVC)
+        navigationController?.pushViewController(cartViewController, animated: true)
+        
+    }
+    
 }
 
 // MARK: - TableView Datasource

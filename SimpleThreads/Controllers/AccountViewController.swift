@@ -14,9 +14,16 @@ class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         accountTableView.dataSource = self
         accountTableView.delegate = self
-        // Do any additional setup after loading the view.
+        configureBackButton()
+    }
+    
+    private func configureBackButton() {
+        let backItem = UIBarButtonItem()
+        backItem.tintColor = .black
+        navigationItem.backBarButtonItem = backItem
     }
 
 }
