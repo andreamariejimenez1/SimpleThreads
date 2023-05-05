@@ -45,6 +45,7 @@ class CategorySelectionViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        badge.text = String(DataStore.cart.items.count)
         configureBadge()
     }
     

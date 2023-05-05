@@ -15,6 +15,10 @@ class CartCell: UITableViewCell {
     
     @IBOutlet weak var productPrice: UILabel!
     
+    @IBOutlet weak var colorLabel: UILabel!
+    
+    @IBOutlet weak var sizeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -34,6 +38,8 @@ class CartCell: UITableViewCell {
             productImage.image = image
             productNameLabel.text = item.name
             productPrice.text = NumberFormatter.localizedString(from: item.price.rawValue as NSNumber, number: .currency)
+            colorLabel.text = item.color?.accessibilityName.capitalized
+            sizeLabel.text = item.size?.rawValue
         }
     }
 }

@@ -100,6 +100,31 @@ extension CartProductsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        guard indexPath.section != 1 else { return nil }
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self] action, view, completion in
+            guard let strongSelf = self else { return }
+            
+            DataStore.cart.items.remove(at: indexPath.row)
+            strongSelf.cartTableView.deleteRows(at: [indexPath], with: .fade)
+            strongSelf.cartTableView.reloadData()
+            completion(true)
+        }
+        
+        deleteAction.backgroundColor = UIColor.AlertColors.red
+        deleteAction.image = UIImage(systemName: "trash")
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 && DataStore.cart.items.count == 0 {
+            return 0.0
+        }
+        return 200.0
+    }
 }
 
 // MARK: - TableView Delegate

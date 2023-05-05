@@ -46,7 +46,6 @@ class ProductDetailViewController: UIViewController {
         
         self.title = item?.name
         productDetailTableView.dataSource = self
-        productDetailTableView.delegate = self
         productDetailTableView.rowHeight = UITableView.automaticDimension
         productDetailTableView.allowsSelection = false
         configureNavigationBar()
@@ -118,6 +117,9 @@ extension ProductDetailViewController: UITableViewDataSource {
         guard let sectionTwoCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.productionDetailSectionTwo, for: indexPath) as? ProductDetailSectionTwoCell else { return UITableViewCell() }
         guard let sectionThreeCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.productionDetailSectionThree, for: indexPath) as? ProductDetailSectionThreeCell else { return UITableViewCell() }
         
+        
+        sectionThreeCell.delegate = self
+        
             /*
              If we had used programmatic UI we could simply create a protocol that with set the cell
              identifier by using String(describing: self) and call the configure method a single time
@@ -142,7 +144,9 @@ extension ProductDetailViewController: UITableViewDataSource {
     }
 }
 
-// MARK: - TableView Delegate
-extension ProductDetailViewController: UITableViewDelegate {
-    
+// MARK: - Cell Delegate
+extension ProductDetailViewController: ProductDetailSectionThreeCellDelegate {
+    func didSelectSize(_ size: Size) {
+        item?.size = size
+    }
 }

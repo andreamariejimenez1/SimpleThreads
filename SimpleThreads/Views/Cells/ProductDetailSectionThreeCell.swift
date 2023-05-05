@@ -7,12 +7,19 @@
 
 import UIKit
 
+protocol ProductDetailSectionThreeCellDelegate: AnyObject {
+    func didSelectSize(_ size: Size)
+}
+
 class ProductDetailSectionThreeCell: UITableViewCell, Configureable {
     
     @IBOutlet weak var inStockLabel: UILabel!
     @IBOutlet var sizeButtons: [UIButton]!
     @IBOutlet weak var addToBagButton: UIButton!
     @IBOutlet weak var productDescriptionLabel: UILabel!
+    
+    
+    weak var delegate: ProductDetailSectionThreeCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,6 +39,12 @@ class ProductDetailSectionThreeCell: UITableViewCell, Configureable {
     }
     
     @IBAction func didSelectSize(_ sender: UIButton) {
+        guard let sizeText = sender.titleLabel?.text else { return }
+        guard let size = Size(rawValue: sizeText) else { return }
+        
+        delegate?.didSelectSize(size)
+        
+        
         // Haptic feedback when user selects size like in Lululemon
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         sender.configuration?.baseForegroundColor = .white

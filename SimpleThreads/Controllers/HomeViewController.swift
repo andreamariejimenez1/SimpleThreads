@@ -65,6 +65,7 @@ class HomeViewController: UIViewController {
     
     @objc private func didPullToRefresh() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.featuredItems.removeAll()
             self.featuredCollectionView.reloadData()
             self.featuredCollectionView.refreshControl?.endRefreshing()
         }
@@ -154,11 +155,7 @@ class HomeViewController: UIViewController {
 
 
 // MARK: - UICollectionView Datasource
-extension HomeViewController: SkeletonCollectionViewDataSource {
-
-    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> SkeletonView.ReusableCellIdentifier {
-        return "cell"
-    }
+extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 8
@@ -169,22 +166,6 @@ extension HomeViewController: SkeletonCollectionViewDataSource {
         
         let item = DataStore.items.shuffled()[indexPath.item]
         featuredItems.append(item)
-        Task {
-            await collectionCell.configure(with: item)
-        }
-        return collectionCell
-    }
-    
-    
-    func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return DataStore.items.count
-    }
-    
-    func collectionSkeletonView(_ skeletonView: UICollectionView, skeletonCellForItemAt indexPath: IndexPath) -> UICollectionViewCell? {
-        guard let collectionCell = skeletonView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.collectionView , for: indexPath) as? ProductCollectionViewCell else { return UICollectionViewCell() }
-        
-        let item = DataStore.items[indexPath.item]
-        
         Task {
             await collectionCell.configure(with: item)
         }
@@ -215,7 +196,7 @@ extension HomeViewController: UICollectionViewDataSourcePrefetching {
 extension HomeViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let product = featuredItems[indexPath.item]
+        let product = featuredItems[indexPath.row]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let productDetailViewController = storyboard.instantiateViewController(withIdentifier: "ProductDetailViewController") as? ProductDetailViewController else { return }
         productDetailViewController.item = product
